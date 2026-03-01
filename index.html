@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stanislav Nikolaievskyi · QA Automation Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">SN<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="about" style="padding-top:0;">
+  <div id="hero">
+    <p class="hero-label">QA Automation Engineer</p>
+    <h1 class="hero-name">Stanislav<br/>Nikolaievskyi</h1>
+    <p class="hero-title"><span id="typed-text"></span><span id="typed-cursor"></span></p>
+    <div class="hero-meta">
+      <span>Prague, Czech Republic</span>
+      <span>+420 776 714 366</span>
+      <span><a href="mailto:stas.nikolaevski@gmail.com">stas.nikolaevski@gmail.com</a></span>
+      <span><a href="https://github.com/Astralborn" target="_blank">github.com/Astralborn</a></span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://github.com/Astralborn" target="_blank">GitHub Profile</a>
+      <a class="btn btn-ghost" href="#experience">View Experience</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="timeline">
+
+    <!-- 2N Telecommunications -->
+    <div class="job reveal">
+      <div class="job-accent"></div>
+      <div class="job-main">
+        <div class="job-top">
+          <div class="job-left">
+            <div class="job-role">QA Automation Engineer</div>
+            <div class="job-company-line">
+              <span class="job-company">2N Telecommunications</span>
+              <span class="job-sep">·</span>
+              <span class="job-location">Prague, CZ</span>
+            </div>
+          </div>
+          <div class="job-right">
+            <span class="job-period">Sep 2025 — Present</span>
+            <span class="job-current">Current role</span>
+          </div>
+        </div>
+        <p class="job-summary">
+          Automating tests for <strong>embedded intercom hardware</strong> — building suites that validate
+          device-level firmware behaviour and <strong>VoIP / SIP</strong> calling alongside browser-based web UI,
+          all in a single pipeline. Rearchitected the CI framework to cut feedback loops, and shipped Python
+          desktop tools that eliminate repetitive QA work every sprint.
+        </p>
+        <div class="job-stats">
+          <div class="stat-chip amber">
+            <span class="stat-icon">📞</span>
+            <span class="stat-value">VoIP</span>
+            <span class="stat-label">Intercom & SIP testing</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-icon">⚡</span>
+            <span class="stat-value">2×</span>
+            <span class="stat-label">CI pipeline speed</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-icon">🔧</span>
+            <span class="stat-value">0→✓</span>
+            <span class="stat-label">Playwright layer built from scratch</span>
+          </div>
+        </div>
+      </div>
+      <div class="job-stack">
+        <span class="stack-chip">VoIP</span>
+        <span class="stack-chip">SIP</span>
+        <span class="stack-chip">Intercom HW</span>
+        <span class="stack-chip">Playwright</span>
+        <span class="stack-chip">Python</span>
+        <span class="stack-chip">Pytest</span>
+        <span class="stack-chip">PySide</span>
+        <span class="stack-chip">Jenkins</span>
+        <span class="stack-chip">Linux</span>
+      </div>
+      <button class="job-toggle" onclick="toggleJob(this)">
+        <span>Show details</span>
+        <span class="toggle-arrow">+</span>
+      </button>
+      <div class="job-details">
+        <div class="job-detail-inner">
+          <div class="detail-item">Designed automated test suites for embedded intercom devices from scratch — expanded coverage into untested system and regression paths that had no automation before.</div>
+          <div class="detail-item">Built end-to-end web UI regression with Playwright, running alongside device-level tests in the same pipeline — one trigger, full system coverage.</div>
+          <div class="detail-item">Refactored the core test framework and stripped dead weight from the CI config; runs that were a bottleneck are meaningfully faster now.</div>
+          <div class="detail-item">Wrote custom PySide desktop tooling for repetitive QA workflows, turning per-sprint manual tasks into single-click automation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rockwell Automation -->
+    <div class="job reveal">
+      <div class="job-accent"></div>
+      <div class="job-main">
+        <div class="job-top">
+          <div class="job-left">
+            <div class="job-role">QA Automation Engineer</div>
+            <div class="job-company-line">
+              <span class="job-company">Rockwell Automation</span>
+              <span class="job-sep">·</span>
+              <span class="job-location">Prague, CZ</span>
+            </div>
+          </div>
+          <div class="job-right">
+            <span class="job-period">Aug 2022 — Aug 2025</span>
+          </div>
+        </div>
+        <p class="job-summary">
+          Three years deep in <strong>embedded systems testing</strong> — owning the full automation layer
+          for an industrial <strong>EtherNet/IP networking library</strong>, from packet-level protocol
+          validation to physical testbed calibration. Shipped two major releases on time, kept defect escape
+          rates consistently low, and built the reusable Python framework the team still relies on.
+        </p>
+        <div class="job-stats">
+          <div class="stat-chip amber">
+            <span class="stat-icon">🔌</span>
+            <span class="stat-value">EtherNet/IP</span>
+            <span class="stat-label">Protocol-level validation</span>
+          </div>
+          <div class="stat-chip amber">
+            <span class="stat-icon">🖥️</span>
+            <span class="stat-value">HW</span>
+            <span class="stat-label">Testbed calibration & maintenance</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-icon">🐛</span>
+            <span class="stat-value">100+</span>
+            <span class="stat-label">Defects filed & resolved</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-icon">🚀</span>
+            <span class="stat-value">2</span>
+            <span class="stat-label">Major releases shipped on time</span>
+          </div>
+        </div>
+      </div>
+      <div class="job-stack">
+        <span class="stack-chip">EtherNet/IP</span>
+        <span class="stack-chip">TCP/IP</span>
+        <span class="stack-chip">Embedded HW</span>
+        <span class="stack-chip">Testbed</span>
+        <span class="stack-chip">Python</span>
+        <span class="stack-chip">Pytest</span>
+        <span class="stack-chip">Jenkins</span>
+        <span class="stack-chip">Git</span>
+        <span class="stack-chip">Gerrit</span>
+        <span class="stack-chip">Jira</span>
+      </div>
+      <button class="job-toggle" onclick="toggleJob(this)">
+        <span>Show details</span>
+        <span class="toggle-arrow">+</span>
+      </button>
+      <div class="job-details">
+        <div class="job-detail-inner">
+          <div class="detail-item">Built and owned the functional + non-functional test suite for a complex embedded networking library — hit high coverage on critical protocol paths and shipped on time for both major releases.</div>
+          <div class="detail-item">Filed and tracked 100+ defects end-to-end: reproduction, triage with devs, fix validation, regression check — nothing fell through the cracks.</div>
+          <div class="detail-item">Abstracted the framework into reusable Python modules — new team members went from zero to writing tests significantly faster.</div>
+          <div class="detail-item">Maintained and calibrated the hardware testbed (embedded targets, managed switches) so test results stayed reproducible regardless of environment drift.</div>
+          <div class="detail-item">Wired tests into Jenkins CI — every commit got automatic quality feedback, shrinking the gap between dev and QA significantly.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Education -->
+  <div class="edu-card reveal">
+    <div class="edu-icon">🎓</div>
+    <div>
+      <div class="edu-degree">B.S. in Electrical Engineering</div>
+      <div class="edu-meta">
+        <span class="edu-school">Czech Technical University in Prague</span>
+        <span class="edu-period">Jun 2019 — Feb 2023</span>
+      </div>
+      <div class="edu-note">Power engineering, motor control &amp; PLC automation — gives hardware-level intuition
+        that most software testers don't have. Directly applicable when debugging at the protocol or embedded layer.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Skills</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="reveal">
+      <p class="skill-group-title">Core Proficiency</p>
+      <div class="skill-bar-row">
+        <div class="skill-bar-label"><span>Python</span><span>90%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
+      </div>
+      <div class="skill-bar-row">
+        <div class="skill-bar-label"><span>Pytest / TDD / BDD</span><span>85%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+      </div>
+      <div class="skill-bar-row">
+        <div class="skill-bar-label"><span>Playwright</span><span>80%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+      </div>
+      <div class="skill-bar-row">
+        <div class="skill-bar-label"><span>Jenkins / CI-CD</span><span>75%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
+      </div>
+      <div class="skill-bar-row">
+        <div class="skill-bar-label"><span>Linux / WSL</span><span>78%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="78"></div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="skill-group-title">Tools & Ecosystem</p>
+      <div class="tag-list" id="tags-container"></div>
+      <p class="skill-group-title" style="margin-top:24px;">Languages</p>
+      <div class="skill-bar-row">
+        <div class="skill-bar-label"><span>English</span><span>Proficient</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+      </div>
+      <div class="skill-bar-row">
+        <div class="skill-bar-label"><span>Czech</span><span>Proficient</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+      </div>
+      <div class="skill-bar-row">
+        <div class="skill-bar-label"><span>Russian / Ukrainian</span><span>Native</span></div>
+        <div class="skill-track"><div class="skill-fill" data-pct="100"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+    <a class="project-card reveal" href="https://github.com/Astralborn/WindowsWslPortBridge" target="_blank">
+      <div class="project-icon">🌉</div>
+      <div class="project-name">WSL Port Bridge</div>
+      <div class="project-desc">Python utility that automatically mirrors Windows network ports into WSL2, eliminating manual port-forwarding on every network change.</div>
+      <div class="project-link">github.com/Astralborn/WindowsWslPortBridge →</div>
+    </a>
+    <a class="project-card reveal" href="https://github.com/Astralborn/API-tester" target="_blank">
+      <div class="project-icon">⚡</div>
+      <div class="project-name">API Tester</div>
+      <div class="project-desc">Lightweight custom Python REST API validation tool built for rapid, scriptable endpoint testing — a targeted alternative to heavy GUI-based tools.</div>
+      <div class="project-link">github.com/Astralborn/API-tester →</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-item reveal">
+      <div class="contact-label">Email</div>
+      <div class="contact-value"><a href="mailto:stas.nikolaevski@gmail.com">stas.nikolaevski@gmail.com</a></div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-label">Phone</div>
+      <div class="contact-value">+420 776 714 366</div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-label">GitHub</div>
+      <div class="contact-value"><a href="https://github.com/Astralborn" target="_blank">github.com/Astralborn</a></div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-label">LinkedIn</div>
+      <div class="contact-value"><a href="https://linkedin.com/in/stas-nikolaievskyi" target="_blank">stas-nikolaievskyi</a></div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-label">Location</div>
+      <div class="contact-value">Prague, Czech Republic</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>// Built with vanilla JS · Stanislav Nikolaievskyi · 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
