@@ -1,235 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stanislav Nikolaievskyi · QA Automation Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanislav Nikolaievskyi | QA Automation Engineer</title>
+    <meta name="description" content="QA Automation Engineer specialising in embedded systems, Python tooling and CI/CD pipelines.">
+    <meta name="author" content="Stanislav Nikolaievskyi">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/animations.css">
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">S<em>.</em>N</div>
-  <ul class="nav-links">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#what-i-do">What I do</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a class="nav-cv" href="CV_Stanislav_Nikolaievskyi.pdf" download>↓ CV</a>
-</nav>
-
-<!-- HERO -->
-<section id="hero" style="padding-top:0;">
-  <div class="hero-left">
-    <div class="hero-overline">Prague, Czech Republic · Open to opportunities</div>
-    <h1 class="hero-name">Stanislav<br/><span>Nikolaievskyi</span></h1>
-    <p class="hero-tagline">
-      I build <strong>automation that replaces manual QA grunt work</strong> —
-      with an electrical engineering background that means I can test
-      at the hardware level, not just the API level.
-    </p>
-    <div class="marquee-wrap">
-      <div id="marquee-inner">
-        <span>Python · Pytest · Playwright · Jenkins · EtherNet/IP · VoIP / SIP · Embedded HW · Linux · TDD / BDD · Jira · Git · PySide ·&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span>Python · Pytest · Playwright · Jenkins · EtherNet/IP · VoIP / SIP · Embedded HW · Linux · TDD / BDD · Jira · Git · PySide ·&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      </div>
-    </div>
-    <div class="hero-btns">
-      <a class="btn btn-primary" href="#projects">See my work</a>
-      <a class="btn btn-outline" href="CV_Stanislav_Nikolaievskyi.pdf" download>↓ Download CV</a>
-      <a class="btn btn-outline" href="https://github.com/Astralborn" target="_blank">GitHub</a>
-    </div>
-    <div class="hero-meta">
-      <a href="mailto:stas.nikolaevski@gmail.com">stas.nikolaevski@gmail.com</a>
-      <a href="https://linkedin.com/in/stas-nikolaievskyi" target="_blank">linkedin / stas-nikolaievskyi</a>
-      <a href="https://github.com/Astralborn" target="_blank">github / Astralborn</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-stat">
-      <div class="hero-stat-value"><span data-target="3" data-suffix="+">3+</span></div>
-      <div class="hero-stat-label">Years automation experience</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-value"><span data-target="100" data-suffix="+">100+</span></div>
-      <div class="hero-stat-label">Defects filed &amp; resolved</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-value"><span data-target="2" data-suffix="">2</span></div>
-      <div class="hero-stat-label">Major releases shipped</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-value"><span data-target="2" data-suffix="×">2×</span></div>
-      <div class="hero-stat-label">CI pipeline speed improvement</div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label reveal">
-    <span class="section-num">01 —</span>
-    <h2 class="section-title">About</h2>
-    <div class="section-rule"></div>
-  </div>
-  <div class="about-grid">
-    <div class="about-text reveal">
-      <p>I'm a QA Automation Engineer with <strong>3+ years</strong> turning slow, manual testing processes into fast, reliable pipelines. My edge is a degree in Electrical Engineering — which means I'm equally comfortable reasoning about firmware behaviour and network protocols as I am writing Python test frameworks.</p>
-      <p>At Rockwell Automation I owned the full test layer for an industrial <strong>EtherNet/IP networking library</strong> — packet-level validation, hardware testbed management, CI integration, the works. At 2N Telecommunications I brought that same approach to <strong>embedded intercom and VoIP hardware</strong>, adding a full Playwright-based web UI layer from scratch.</p>
-      <p>Outside work I build Python tools that scratch my own itches — utilities that make the dev/QA workflow just a bit less painful.</p>
-    </div>
-    <div class="about-sidebar reveal">
-      <div class="fact-row"><span class="fact-label">Location</span><span class="fact-value">Prague, Czech Republic</span></div>
-      <div class="fact-row"><span class="fact-label">Current</span><span class="fact-value accent">QA Automation · 2N Telecom</span></div>
-      <div class="fact-row"><span class="fact-label">Experience</span><span class="fact-value">3+ years automation</span></div>
-      <div class="fact-row"><span class="fact-label">Education</span><span class="fact-value">B.S. Electrical Engineering</span></div>
-      <div class="fact-row"><span class="fact-label">Speciality</span><span class="fact-value">Embedded systems testing</span></div>
-      <div class="fact-row"><span class="fact-label">Languages</span><span class="fact-value">EN / CZ / RU / UA</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT I DO -->
-<section id="what-i-do">
-  <div class="section-label reveal">
-    <span class="section-num">02 —</span>
-    <h2 class="section-title">What I do</h2>
-    <div class="section-rule"></div>
-  </div>
-  <div class="specialisms">
-    <div class="specialism reveal">
-      <div class="specialism-num">01</div>
-      <div class="specialism-title">Embedded Systems Testing</div>
-      <p class="specialism-desc">Testing at the hardware/software boundary — firmware behaviour, protocol validation (EtherNet/IP, TCP/IP, VoIP/SIP), and physical testbed management. The electrical engineering background matters here.</p>
-      <div class="specialism-tags"><span class="stag">EtherNet/IP</span><span class="stag">VoIP / SIP</span><span class="stag">Embedded HW</span><span class="stag">TCP/IP</span></div>
-    </div>
-    <div class="specialism reveal">
-      <div class="specialism-num">02</div>
-      <div class="specialism-title">Python Test Tooling</div>
-      <p class="specialism-desc">Building frameworks and tools from scratch — reusable Pytest modules, Playwright-based web UI automation, and custom PySide desktop apps that replace repetitive sprint work with a single click.</p>
-      <div class="specialism-tags"><span class="stag">Python</span><span class="stag">Pytest</span><span class="stag">Playwright</span><span class="stag">PySide</span></div>
-    </div>
-    <div class="specialism reveal">
-      <div class="specialism-num">03</div>
-      <div class="specialism-title">CI/CD &amp; Pipelines</div>
-      <p class="specialism-desc">Wiring tests into Jenkins so every commit gets automatic quality feedback. Refactoring pipelines to cut run time, remove bottlenecks, and keep the gap between dev and QA as tight as possible.</p>
-      <div class="specialism-tags"><span class="stag">Jenkins</span><span class="stag">CI/CD</span><span class="stag">Linux</span><span class="stag">Git</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-label reveal">
-    <span class="section-num">03 —</span>
-    <h2 class="section-title">Projects</h2>
-    <div class="section-rule"></div>
-  </div>
-  <div class="projects-list">
-    <div class="project reveal">
-      <div class="project-inner">
-        <div>
-          <div class="project-eyebrow">Python · Networking · Automation</div>
-          <div class="project-name">WSL Port Bridge</div>
-          <p class="project-desc">Working in WSL2 means your ports don't automatically mirror to Windows — every network change wipes your forwarding rules and you're back to running manual commands. This utility watches for network changes and keeps everything in sync automatically, so you can just work.</p>
-          <div class="project-tech"><span class="ptag">Python</span><span class="ptag">Windows API</span><span class="ptag">WSL2</span><span class="ptag">Networking</span></div>
+    <!-- Boot Screen -->
+    <div id="bootScreen" class="boot-screen">
+        <div class="boot-content">
+            <div class="boot-header">
+                <pre class="ascii-art">
+  ___  _     _   _  _  _  ___  _      __   _   _
+ / __|| |_  /_\ | \| || || __|| |    /_/  | | / \
+ \__ \|  _|/ _ \| .` || || _| | |__  .'  | |_\ V /
+ |___/ \__|/_/ \_\_|\_||_||___||____| `~' |___/\_/
+                </pre>
+            </div>
+            <div class="boot-terminal">
+                <p><span class="boot-prompt">[SYSTEM]</span> <span class="boot-text">Initializing QA environment...</span></p>
+                <p><span class="boot-prompt">[BOOT]</span>   <span class="boot-text">Loading test frameworks</span> <span class="boot-dots"></span></p>
+                <p><span class="boot-prompt">[INIT]</span>   <span class="boot-text">Mounting embedded test suites</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[LOAD]</span>   <span class="boot-text">Starting Jenkins CI services</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[EXEC]</span>   <span class="boot-text">Loading portfolio.sh</span> <span class="boot-dots"></span></p>
+                <p><span class="boot-prompt">[INIT]</span>   <span class="boot-text">Initializing user interface</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[DONE]</span>   <span class="boot-text">System ready — welcome, human</span> <span class="boot-status boot-ready">[READY]</span></p>
+            </div>
+            <div class="boot-progress">
+                <div class="boot-progress-bar"></div>
+            </div>
+            <p class="boot-footer">Press any key or click to continue...</p>
         </div>
-        <div class="project-aside">
-          <a class="project-link" href="https://github.com/Astralborn/WindowsWslPortBridge" target="_blank">View on GitHub →</a>
+    </div>
+
+    <!-- Nav -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">&gt;_ stas.sh</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#about"      onclick="closeMenu()">About</a>
+                <a href="#skills"     onclick="closeMenu()">Skills</a>
+                <a href="#experience" onclick="closeMenu()">Experience</a>
+                <a href="#projects"   onclick="closeMenu()">Projects</a>
+                <a href="#contact"    onclick="closeMenu()">Contact</a>
+                <a href="CV_Stanislav_Nikolaievskyi.pdf" download class="nav-cv-btn">↓ CV</a>
+            </div>
         </div>
-      </div>
-      <div class="project-snippet">
-        <span class="cm"># Watches for network adapter changes, re-applies port rules</span><br/>
-        <span class="kw">def</span> <span class="fn">sync_ports</span>(rules: list[PortRule]) -&gt; <span class="kw">None</span>:<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">for</span> rule <span class="kw">in</span> rules:<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">forward_port</span>(rule.host_port, <span class="fn">get_wsl_ip</span>(), rule.wsl_port)
-      </div>
-    </div>
-    <div class="project reveal">
-      <div class="project-inner">
-        <div>
-          <div class="project-eyebrow">Python · REST · CLI Testing</div>
-          <div class="project-name">API Tester</div>
-          <p class="project-desc">A lightweight Python REST API validation tool built for rapid, scriptable endpoint testing. GUI tools like Insomnia or Postman don't fit naturally into automated workflows. This one does — define your tests in code, run from the terminal, get clean output.</p>
-          <div class="project-tech"><span class="ptag">Python</span><span class="ptag">REST API</span><span class="ptag">CLI</span><span class="ptag">HTTP</span></div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <div class="tag">// QA Automation Engineer · Embedded Systems · Prague</div>
+            <h1>STANISLAV N.</h1>
+            <p class="subtitle">I automate what shouldn't be manual.</p>
+
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot dot-red"></div>
+                    <div class="terminal-dot dot-yellow"></div>
+                    <div class="terminal-dot dot-green"></div>
+                </div>
+                <div class="terminal-text">
+                    <p><span class="prompt">$</span> <span class="command">./get_profile.sh</span></p>
+                    <p class="output">QA Engineer with expertise in:</p>
+                    <p class="output"><span class="prompt">&gt;</span> Embedded &amp; hardware testing (EtherNet/IP, VoIP/SIP)</p>
+                    <p class="output"><span class="prompt">&gt;</span> Python test frameworks &amp; CI/CD pipelines</p>
+                    <p class="output"><span class="prompt">&gt;</span> Playwright web UI automation</p>
+                    <p class="output"><span class="prompt">&gt;</span> B.S. Electrical Engineering — CTU Prague</p>
+                    <br>
+                    <p><span class="prompt">$</span> <span class="command">cat contact.txt</span></p>
+                    <p class="output">Email: <a href="mailto:stas.nikolaevski@gmail.com" class="link">stas.nikolaevski@gmail.com</a></p>
+                    <p class="output">GitHub: <a href="https://github.com/Astralborn" target="_blank" class="link">github.com/Astralborn</a></p>
+                    <br>
+                    <p><span class="prompt">$</span> <span class="output">_</span><span style="animation: blink 1s infinite;">|</span></p>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="CV_Stanislav_Nikolaievskyi.pdf" download class="btn btn-secondary">↓ Download CV</a>
+            </div>
         </div>
-        <div class="project-aside">
-          <a class="project-link" href="https://github.com/Astralborn/API-tester" target="_blank">View on GitHub →</a>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <p class="about-intro">
+                        Hi! I'm <span class="highlight">Stanislav</span>, a QA Automation Engineer who builds automation that replaces manual grunt work — with an electrical engineering background that means I test at the hardware level, not just the API level.
+                    </p>
+                    <p>
+                        At <span class="highlight">Rockwell Automation</span> I owned the full test layer for an industrial EtherNet/IP networking library — protocol validation, hardware testbed management, Jenkins CI, the works. At <span class="highlight">2N Telecommunications</span> I brought that same approach to embedded intercom and VoIP hardware, adding a Playwright web UI layer from scratch.
+                    </p>
+                    <p>
+                        Outside work I build Python tools that scratch my own itches — utilities that make the dev/QA workflow just a bit less painful.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years Automation</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Defects Filed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2×</div>
+                            <div class="stat-label">CI Speed Gain</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dot dot-red"></div>
+                            <div class="code-dot dot-yellow"></div>
+                            <div class="code-dot dot-green"></div>
+                            <span class="code-title">engineer.py</span>
+                        </div>
+                        <div class="code-content">
+<pre><code><span class="code-keyword">class</span> <span class="code-variable">QAEngineer</span>:
+  <span class="code-property">name</span>     = <span class="code-string">"Stanislav Nikolaievskyi"</span>
+  <span class="code-property">location</span> = <span class="code-string">"Prague, Czech Republic"</span>
+  <span class="code-property">role</span>     = <span class="code-string">"QA Automation Engineer"</span>
+
+  <span class="code-property">strengths</span> = [
+    <span class="code-string">"Embedded systems testing"</span>,
+    <span class="code-string">"Python test tooling"</span>,
+    <span class="code-string">"CI/CD pipelines"</span>,
+    <span class="code-string">"Protocol validation"</span>,
+  ]
+
+  <span class="code-property">education</span> = <span class="code-string">"B.S. Electrical Engineering"</span>
+  <span class="code-property">languages</span> = [<span class="code-string">"EN"</span>, <span class="code-string">"CZ"</span>, <span class="code-string">"RU"</span>, <span class="code-string">"UA"</span>]
+
+  <span class="code-comment"># edge: HW background most QA devs lack</span>
+  <span class="code-property">edge</span> = <span class="code-string">"tests at the firmware level"</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="project-snippet">
-        <span class="cm"># Define and run API tests as plain Python</span><br/>
-        <span class="fn">test</span>(<span class="st">"GET /users returns 200"</span>,<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;url=<span class="st">"https://api.example.com/users"</span>,<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;expect_status=<span class="kw">200</span>)
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-label reveal">
-    <span class="section-num">04 —</span>
-    <h2 class="section-title">Experience</h2>
-    <div class="section-rule"></div>
-  </div>
-  <div class="exp-list">
-    <div class="exp-item reveal">
-      <div class="exp-period">Sep 2025 — Present<span class="now">Now</span></div>
-      <div>
-        <div class="exp-role">QA Automation Engineer</div>
-        <div class="exp-company">2N Telecommunications · Prague</div>
-        <div class="exp-note">Embedded intercom &amp; VoIP hardware testing. Built Playwright web UI layer from scratch, refactored CI pipeline for 2× faster runs, shipped PySide desktop tooling to automate sprint workflows.</div>
-      </div>
-    </div>
-    <div class="exp-item reveal">
-      <div class="exp-period">Aug 2022 — Aug 2025</div>
-      <div>
-        <div class="exp-role">QA Automation Engineer</div>
-        <div class="exp-company">Rockwell Automation · Prague</div>
-        <div class="exp-note">Full test ownership for an industrial EtherNet/IP networking library. Protocol-level validation, hardware testbed management, Jenkins CI integration. 100+ defects filed, 2 major releases shipped on time.</div>
-      </div>
-    </div>
-    <div class="exp-item reveal">
-      <div class="exp-period">Jun 2019 — Feb 2023</div>
-      <div>
-        <div class="exp-role">B.S. Electrical Engineering</div>
-        <div class="exp-company">Czech Technical University · Prague</div>
-        <div class="exp-note">Power engineering, motor control, PLC automation. Provides the hardware-level intuition behind the embedded testing work.</div>
-      </div>
-    </div>
-  </div>
-  <div class="cv-strip reveal">
-    <div class="cv-strip-text"><strong>Want the full picture?</strong>Full work history, skills and references in the CV.</div>
-    <a class="btn-cv" href="CV_Stanislav_Nikolaievskyi.pdf" download>↓ Download CV</a>
-  </div>
-</section>
+    <!-- Skills -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3>Test Automation</h3>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Python</span><span>90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Pytest / TDD / BDD</span><span>85%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Playwright</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>PySide (desktop GUI)</span><span>72%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="72%"></div></div>
+                </div>
+            </div>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label reveal">
-    <span class="section-num">05 —</span>
-    <h2 class="section-title">Contact</h2>
-    <div class="section-rule"></div>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-item reveal"><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:stas.nikolaevski@gmail.com">stas.nikolaevski@gmail.com</a></div></div>
-    <div class="contact-item reveal"><div class="contact-label">Phone</div><div class="contact-value">+420 776 714 366</div></div>
-    <div class="contact-item reveal"><div class="contact-label">GitHub</div><div class="contact-value"><a href="https://github.com/Astralborn" target="_blank">github.com/Astralborn</a></div></div>
-    <div class="contact-item reveal"><div class="contact-label">LinkedIn</div><div class="contact-value"><a href="https://linkedin.com/in/stas-nikolaievskyi" target="_blank">stas-nikolaievskyi</a></div></div>
-    <div class="contact-item reveal"><div class="contact-label">Location</div><div class="contact-value">Prague, Czech Republic</div></div>
-  </div>
-</section>
+            <div class="skill-category fade-in" style="animation-delay:0.1s;">
+                <h3>Embedded &amp; Protocols</h3>
+                <div class="skill-item">
+                    <div class="skill-name"><span>EtherNet/IP · TCP/IP</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>VoIP / SIP</span><span>75%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="75%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>HW Testbed Management</span><span>78%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="78%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Linux / WSL</span><span>78%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="78%"></div></div>
+                </div>
+            </div>
 
-<footer>Stanislav Nikolaievskyi &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Built with vanilla JS</footer>
+            <div class="skill-category fade-in" style="animation-delay:0.2s;">
+                <h3>CI/CD &amp; Tooling</h3>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Jenkins</span><span>75%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="75%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Git · Gerrit</span><span>82%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="82%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Jira · Confluence</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>REST API testing</span><span>76%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width:0%" data-width="76%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- Experience -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>QA Automation Engineer</h3>
+                    <div class="timeline-date">Sep 2025 — Present · 2N Telecommunications, Prague</div>
+                    <p class="timeline-description">
+                        Automating tests for embedded intercom hardware — validating firmware behaviour and VoIP/SIP calling alongside browser-based web UI in a single pipeline. Built the Playwright layer from scratch, refactored CI for 2× faster runs, shipped PySide desktop tooling that replaced repetitive sprint work.
+                    </p>
+                    <div class="tl-tags">
+                        <span class="tl-tag">VoIP/SIP</span>
+                        <span class="tl-tag">Playwright</span>
+                        <span class="tl-tag">Python</span>
+                        <span class="tl-tag">Pytest</span>
+                        <span class="tl-tag">Jenkins</span>
+                        <span class="tl-tag">PySide</span>
+                        <span class="tl-tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in" style="animation-delay:0.1s;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>QA Automation Engineer</h3>
+                    <div class="timeline-date">Aug 2022 — Aug 2025 · Rockwell Automation, Prague</div>
+                    <p class="timeline-description">
+                        Full test ownership for an industrial EtherNet/IP networking library. Packet-level protocol validation, physical hardware testbed management, Jenkins CI integration. 100+ defects filed end-to-end, 2 major releases shipped on time.
+                    </p>
+                    <div class="tl-tags">
+                        <span class="tl-tag">EtherNet/IP</span>
+                        <span class="tl-tag">TCP/IP</span>
+                        <span class="tl-tag">Embedded HW</span>
+                        <span class="tl-tag">Python</span>
+                        <span class="tl-tag">Pytest</span>
+                        <span class="tl-tag">Jenkins</span>
+                        <span class="tl-tag">Gerrit</span>
+                        <span class="tl-tag">Jira</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in" style="animation-delay:0.2s;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>B.S. Electrical Engineering</h3>
+                    <div class="timeline-date">Jun 2019 — Feb 2023 · Czech Technical University, Prague</div>
+                    <p class="timeline-description">
+                        Power engineering, motor control, PLC automation. Provides the hardware-level intuition behind the embedded testing work — the edge most QA engineers don't have.
+                    </p>
+                    <div class="tl-tags">
+                        <span class="tl-tag">Power Engineering</span>
+                        <span class="tl-tag">PLC Automation</span>
+                        <span class="tl-tag">Motor Control</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <h3>🌉 WSL Port Bridge</h3>
+                <p>Working in WSL2 means ports don't automatically mirror to Windows — every network change wipes your forwarding rules. This utility watches for network changes and re-applies port rules automatically, so you can just work.</p>
+                <div class="project-snippet-box">
+                    <span class="sc"># Re-applies rules on every network change</span><br/>
+                    <span class="skw">def</span> <span class="sfn">sync_ports</span>(rules):<br/>
+                    &nbsp;&nbsp;<span class="skw">for</span> rule <span class="skw">in</span> rules:<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="sfn">forward_port</span>(rule.host, <span class="sfn">get_wsl_ip</span>(), rule.wsl)
+                </div>
+                <div class="project-tech">
+                    <span class="ptag">Python</span>
+                    <span class="ptag">Windows API</span>
+                    <span class="ptag">WSL2</span>
+                    <span class="ptag">Networking</span>
+                </div>
+                <a href="https://github.com/Astralborn/WindowsWslPortBridge" target="_blank" class="project-link">View on GitHub &rarr;</a>
+            </div>
+
+            <div class="project-card fade-in" style="animation-delay:0.1s;">
+                <h3>⚡ API Tester</h3>
+                <p>Lightweight Python REST API validation tool for rapid, scriptable endpoint testing. GUI tools like Postman don't fit automated workflows — this one does. Define tests in code, run from terminal, get clean output.</p>
+                <div class="project-snippet-box">
+                    <span class="sc"># Define and run as plain Python</span><br/>
+                    <span class="sfn">test</span>(<span class="sst">"GET /users returns 200"</span>,<br/>
+                    &nbsp;&nbsp;url=<span class="sst">"https://api.example.com/users"</span>,<br/>
+                    &nbsp;&nbsp;expect_status=<span class="skw">200</span>)
+                </div>
+                <div class="project-tech">
+                    <span class="ptag">Python</span>
+                    <span class="ptag">REST API</span>
+                    <span class="ptag">CLI</span>
+                    <span class="ptag">HTTP</span>
+                </div>
+                <a href="https://github.com/Astralborn/API-tester" target="_blank" class="project-link">View on GitHub &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:stas.nikolaevski@gmail.com">stas.nikolaevski@gmail.com</a>
+                </div>
+                <div class="contact-item fade-in" style="animation-delay:0.1s;">
+                    <div class="contact-icon">💼</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/Astralborn" target="_blank">github.com/Astralborn</a>
+                </div>
+                <div class="contact-item fade-in" style="animation-delay:0.2s;">
+                    <div class="contact-icon">🔗</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/stas-nikolaievskyi" target="_blank">stas-nikolaievskyi</a>
+                </div>
+                <div class="contact-item fade-in" style="animation-delay:0.3s;">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <a>Prague, Czech Republic</a>
+                    <div class="contact-note">+420 776 714 366</div>
+                </div>
+            </div>
+
+            <div class="cv-strip fade-in">
+                <div class="cv-strip-text">
+                    <strong>Want the full picture?</strong>
+                    Full work history, skills breakdown and references in the CV.
+                </div>
+                <a href="CV_Stanislav_Nikolaievskyi.pdf" download class="cv-btn">↓ Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 <span class="signature">Stanislav Nikolaievskyi</span>. All rights reserved.</p>
+        <p style="margin-top:0.5rem; font-size:0.9rem;">Built with HTML, CSS &amp; vanilla JavaScript</p>
+    </footer>
+
+    <script src="src/js/main.js"></script>
 </body>
 </html>
