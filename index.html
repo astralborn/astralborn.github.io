@@ -1,17 +1,11 @@
-<!--
-    File: index.html
-    Purpose: Developer portfolio main page
-    Signed by: serozr
-    Date: 2025-10-16
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>serozr | Developer Portfolio</title>
-    <meta name="description" content="Modern developer portfolio with terminal-inspired design">
-    <meta name="author" content="serozr">
+    <title>Astralborn | Website in terminal</title>
+    <meta name="description" content="Cool personal web with terminal-inspired design">
+    <meta name="author" content="astralborn">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/animations.css">
 </head>
@@ -21,32 +15,34 @@
         <div class="boot-content">
             <div class="boot-header">
                 <pre class="ascii-art">
- ____  _____ _   _ _____ _     ___  ____  _____ ____  
-|  _ \| ____| | | | ____| |   / _ \|  _ \| ____|  _ \ 
-| | | |  _| | | | |  _| | |  | | | | |_) |  _| | |_) |
-| |_| | |___| |_| | |___| |__| |_| |  __/| |___|  _ < 
-|____/|_____|\___/|_____|_____\___/|_|   |_____|_| \_\
+
+  ▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄     ▄▄▄▄   ▄▄▄      ▄▄▄▄▄▄▄     ▄▄▄▄▄   ▄▄▄▄▄▄▄   ▄▄▄    ▄▄▄
+▄██▀▀██▄ █████▀▀▀ ▀▀▀███▀▀▀ ███▀▀███▄ ▄██▀▀██▄ ███      ███▀▀███▄ ▄███████▄ ███▀▀███▄ ████▄  ███
+███  ███  ▀████▄     ███    ███▄▄███▀ ███  ███ ███      ███▄▄███▀ ███   ███ ███▄▄███▀ ███▀██▄███
+███▀▀███    ▀████    ███    ███▀▀██▄  ███▀▀███ ███      ███  ███▄ ███▄▄▄███ ███▀▀██▄  ███  ▀████
+███  ███ ███████▀    ███    ███  ▀███ ███  ███ ████████ ████████▀  ▀█████▀  ███  ▀███ ███    ███
+
                 </pre>
             </div>
             <div class="boot-terminal">
-                <p><span class="boot-prompt">[SYSTEM]</span> <span class="boot-text">Initializing system...</span></p>
-                <p><span class="boot-prompt">[BOOT]</span> <span class="boot-text">Loading core modules</span> <span class="boot-dots"></span></p>
-                <p><span class="boot-prompt">[INIT]</span> <span class="boot-text">Mounting file systems</span> <span class="boot-status boot-ok">[OK]</span></p>
-                <p><span class="boot-prompt">[LOAD]</span> <span class="boot-text">Starting network services</span> <span class="boot-status boot-ok">[OK]</span></p>
-                <p><span class="boot-prompt">[EXEC]</span> <span class="boot-text">Loading portfolio.sh</span> <span class="boot-dots"></span></p>
-                <p><span class="boot-prompt">[INIT]</span> <span class="boot-text">Initializing user interface</span> <span class="boot-status boot-ok">[OK]</span></p>
-                <p><span class="boot-prompt">[DONE]</span> <span class="boot-text">System ready</span> <span class="boot-status boot-ready">[READY]</span></p>
+                <p><span class="boot-prompt">[SYSTEM]</span> <span class="boot-text">Initializing test environment...</span></p>
+                <p><span class="boot-prompt">[PYTEST]</span> <span class="boot-text">Loading test frameworks</span> <span class="boot-dots"></span></p>
+                <p><span class="boot-prompt">[CI/CD]</span> <span class="boot-text">Jenkins pipeline connected</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[EMBED]</span> <span class="boot-text">Mounting testbed hardware</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[EXEC]</span> <span class="boot-text">Running regression suite</span> <span class="boot-dots"></span></p>
+                <p><span class="boot-prompt">[PASS]</span> <span class="boot-text">All critical paths verified</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[DONE]</span> <span class="boot-text">System ready — defect escape rate: 0%</span> <span class="boot-status boot-ready">[READY]</span></p>
             </div>
             <div class="boot-progress">
                 <div class="boot-progress-bar"></div>
             </div>
-            <p class="boot-footer">Press any key to continue... <span class="boot-sign">— serozr</span></p>
+            <p class="boot-footer">Press any key to continue... <span class="boot-sign">— astralborn</span></p>
         </div>
     </div>
 
     <nav>
         <div class="nav-content">
-            <div class="logo">&gt;_developer.sh <span class="logo-sign">· serozr</span></div>
+            <div class="logo">&gt;>_ test-engineer.sh <span class="logo-sign">· astralborn</span></div>
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -55,11 +51,13 @@
             <div class="nav-links" id="navLinks">
                 <a href="#about" onclick="closeMenu()">About</a>
                 <a href="#skills" onclick="closeMenu()">Skills</a>
+                <!--
                 <a href="#experience" onclick="closeMenu()">Experience</a>
                 <a href="#education" onclick="closeMenu()">Education</a>
                 <a href="#certifications" onclick="closeMenu()">Certifications</a>
+                -->
                 <a href="#projects" onclick="closeMenu()">Projects</a>
-                <a href="#blog" onclick="closeMenu()">Blog</a>
+                <!-- <a href="#blog" onclick="closeMenu()">Blog</a>-->
                 <a href="#contact" onclick="closeMenu()">Contact</a>
             </div>
         </div>
@@ -67,9 +65,9 @@
 
     <section class="hero">
         <div class="hero-content fade-in">
-            <div class="tag">// web developer & Designer</div>
-            <h1>SEROZR <small class="inline-sign">(serozr)</small></h1>
-            <p class="subtitle">Building digital experiences — crafted by serozr</p>
+            <div class="tag">// qa automation engineer</div>
+            <h1>astralborn</h1>
+            <p class="subtitle">Breaking things professionally since 2022</p>
             
             <div class="terminal-window">
                 <div class="terminal-header">
@@ -79,13 +77,13 @@
                 </div>
                 <div class="terminal-text">
                     <p><span class="prompt">$</span> <span class="command">./get_profile.sh</span></p>
-                    <p class="output">Developer with expertise in:</p>
-                    <p class="output"><span class="prompt">&gt;</span> Web Development</p>
-                    <p class="output"><span class="prompt">&gt;</span> UI/UX Design</p>
-                    <p class="output"><span class="prompt">&gt;</span> Creative Projects</p>
+                    <p class="output">QA Automation Engineer with expertise in:</p>
+                    <p class="output"><span class="prompt">&gt;</span> Test Automation & Frameworks</p>
+                    <p class="output"><span class="prompt">&gt;</span> Embedded Systems & CI/CD</p>
+                    <p class="output"><span class="prompt">&gt;</span> Python · Pytest · Playwright</p>
                     <br>
                     <p><span class="prompt">$</span> <span class="command">cat contact.txt</span></p>
-                    <p class="output">GitHub: <a href="https://github.com/serozr" target="_blank" class="link">github.com/serozr</a> <span class="muted">· by serozr</span></p>
+                    <p class="output">GitHub: <a href="https://github.com/astralborn" target="_blank" class="link">github.com/astralborn</a></p>
                     <br>
                     <p><span class="prompt">$</span> <span class="output">_</span><span style="animation: blink 1s infinite;">|</span></p>
                 </div>
@@ -117,7 +115,7 @@
                     </p>
                     <div class="about-stats">
                         <div class="stat-item">
-                            <div class="stat-number">5+</div>
+                            <div class="stat-number">3+</div>
                             <div class="stat-label">Years of Experience</div>
                         </div>
                         <div class="stat-item">
