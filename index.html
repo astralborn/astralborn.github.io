@@ -66,48 +66,81 @@
 
     <section class="hero">
         <div class="hero-content fade-in">
-
-            <!-- ADD PHOTO HERE -->
-            <img src="src/assets/images/photo.png" alt="astralborn" style="
-            width: 220px;
-            border-radius: 15px;
-            border: 1px solid rgba(0, 255, 140, 0.3);
-            box-shadow: 0 0 40px rgba(0, 255, 140, 0.25);
-            margin-bottom: 1.5rem;
-            display: block;
-            margin: 0 auto 1.5rem auto;
-        "/>
-
             <div class="tag">// qa automation engineer</div>
-            <h1>astralborn</h1>
-            <p class="subtitle">Automation author. Part-time automation arsonist.</p>
+            <p class="subtitle">Automation author. Manual work arsonist.</p>
 
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-dot dot-red"></div>
-                    <div class="terminal-dot dot-yellow"></div>
-                    <div class="terminal-dot dot-green"></div>
-                </div>
-                <div class="terminal-text">
-                    <p><span class="prompt">$</span> <span class="command">./get_profile.sh</span></p>
-                    <p class="output">QA Automation Engineer with expertise in:</p>
-                    <p class="output"><span class="prompt">&gt;</span> Test Automation & Frameworks</p>
-                    <p class="output"><span class="prompt">&gt;</span> Embedded Systems & CI/CD</p>
-                    <p class="output"><span class="prompt">&gt;</span> Python · Pytest · Playwright</p>
-                    <br>
-                    <p><span class="prompt">$</span> <span class="command">cat contact.txt</span></p>
-                    <p class="output">GitHub: <a href="https://github.com/astralborn" target="_blank" class="link">github.com/astralborn</a></p>
-                    <br>
-                    <p><span class="prompt">$</span> <span class="output">_</span><span style="animation: blink 1s infinite;">|</span></p>
+            <div style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: stretch;
+            margin: 2rem auto;
+            max-width: 900px;
+            height: 380px;
+        ">
+                <!-- PHOTO LEFT -->
+                <img src="src/assets/images/photo.png" alt="astralborn" style="
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+                object-position: top;
+                border-radius: 15px;
+                border: 1px solid rgba(0, 255, 140, 0.3);
+                box-shadow: 0 0 40px rgba(0, 255, 140, 0.25);
+            "/>
+
+                <!-- TERMINAL RIGHT -->
+                <div class="terminal-window" style="height: 90%; margin: 0;">
+                    <div class="terminal-header">
+                        <div class="terminal-dot dot-red"></div>
+                        <div class="terminal-dot dot-yellow"></div>
+                        <div class="terminal-dot dot-green"></div>
+                    </div>
+                    <div class="terminal-text">
+                        <p><span class="prompt">$</span> <span class="command">./get_profile.sh</span></p>
+                        <p class="output">QA Automation Engineer with expertise in:</p>
+                        <p class="output"><span class="prompt">&gt;</span> Test Automation & Frameworks</p>
+                        <p class="output"><span class="prompt">&gt;</span> Embedded Systems & CI/CD</p>
+                        <p class="output"><span class="prompt">&gt;</span> Python · Pytest · Playwright</p>
+                        <br>
+                        <p><span class="prompt">$</span> <span class="command">cat github-link.txt</span></p>
+                        <p class="output">GitHub: <a href="https://github.com/astralborn" target="_blank" class="link">github.com/astralborn</a></p>
+                        <br>
+                        <p><span class="prompt">$</span> <span class="command">./navigate.sh</span></p>
+                        <p class="output">Select destination:</p>
+                        <a href="#projects" style="
+                        display: block;
+                        color: #00FF8C;
+                        text-decoration: none;
+                        font-family: 'Courier New', monospace;
+                        padding: 0.3rem 0.5rem;
+                        border: 1px solid rgba(0, 255, 140, 0.3);
+                        border-radius: 4px;
+                        margin: 0.3rem 0;
+                        transition: all 0.2s;
+                    " onmouseover="this.style.background='rgba(0,255,140,0.1)'; this.style.borderColor='#00FF8C';"
+                           onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(0,255,140,0.3)';">
+                            [1] cd ./projects
+                        </a>
+                        <a href="#contact" style="
+                        display: block;
+                        color: #00FF8C;
+                        text-decoration: none;
+                        font-family: 'Courier New', monospace;
+                        padding: 0.3rem 0.5rem;
+                        border: 1px solid rgba(0, 255, 140, 0.3);
+                        border-radius: 4px;
+                        margin: 0.3rem 0;
+                        transition: all 0.2s;
+                    " onmouseover="this.style.background='rgba(0,255,140,0.1)'; this.style.borderColor='#00FF8C';"
+                           onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(0,255,140,0.3)';">
+                            [2] ./contact.sh
+                        </a>
+                        <p><span class="prompt">&gt;</span> <span style="animation: blink 1s infinite;">█</span></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                <!-- Quick sign -->
-                <span class="cta-sign"></span>
-            </div>
         </div>
     </section>
 
