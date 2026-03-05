@@ -145,38 +145,48 @@
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <div class="about-content fade-in">
-                <div class="about-text">
-                    <p class="about-intro">
-                        Hi! I'm <span class="highlight">astralborn</span>, a QA Automation
-                        Engineer based in Prague specializing in test automation, CI/CD
-                        pipelines, and building tools that make quality scalable.
-                    </p>
-                    <p>
-                        I design and maintain Python-based test frameworks, automate CI/CD
-                        pipelines, and cover everything from embedded systems and protocol
-                        validation to web UI regression with Playwright. My work is driven
-                        by a focus on expanding coverage, eliminating manual effort, and
-                        keeping release cycles fast and reliable.
-                    </p>
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+        <div class="about-content fade-in">
+            <div class="about-text">
+                <p class="about-intro">
+                Hi! I'm <span class="highlight">astralborn</span>, a QA Automation
+                Engineer based in Prague. I build Python test frameworks, own CI/CD
+                pipelines, and push coverage across the board — from embedded
+                systems to web UI regression. Good enough to ship. Hungry enough to improve.
+                </p>
+                <div class="about-stats fade-in">
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years of Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">40+</div>
+                        <div class="stat-label">Scripts & Tools Built</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Tests Automated</div>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <div class="code-window">
-                        <div class="code-header">
-                            <div class="code-dot dot-red"></div>
-                            <div class="code-dot dot-yellow"></div>
-                            <div class="code-dot dot-green"></div>
-                            <span class="code-title">about.py</span>
-                        </div>
-                        <div class="code-content">
+            </div>
+
+            <div class="about-image">
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-dot dot-red"></div>
+                        <div class="code-dot dot-yellow"></div>
+                        <div class="code-dot dot-green"></div>
+                        <span class="code-title">about.py</span>
+                    </div>
+                    <div class="code-content">
 <pre><code><span class="code-keyword">class</span> <span class="code-variable">Engineer</span>:
     <span class="code-keyword">def</span> <span class="code-variable">__init__</span>(<span class="code-property">self</span>):
         <span class="code-property">self</span>.name = <span class="code-string">"astralborn"</span>
         <span class="code-property">self</span>.role = <span class="code-string">"QA Automation Engineer"</span>
         <span class="code-property">self</span>.location = <span class="code-string">"Prague, Czech Republic"</span>
+        <span class="code-property">self</span>.experience = <span class="code-string">"3+ years"</span>
         <span class="code-property">self</span>.stack = [
             <span class="code-string">"Python"</span>,
             <span class="code-string">"Pytest"</span>,
@@ -184,43 +194,22 @@
             <span class="code-string">"Jenkins"</span>,
             <span class="code-string">"Linux"</span>
         ]
-        <span class="code-property">self</span>.currently_learning = [
-            <span class="code-string">"Advanced Python"</span>,
-            <span class="code-string">"Javascript"</span>
-        ]
-        <span class="code-property">self</span>.target_escape_rate = <span class="code-string">"0%"</span>  <span class="code-comment"># the mission continues</span>
+        <span class="code-property">self</span>.currently_learning = <span class="code-string">"always something new"</span>
+        <span class="code-property">self</span>.target_escape_rate = <span class="code-string">"0%"</span>  <span class="code-comment"># not there yet, but close</span>
 
     <span class="code-keyword">@property</span>
     <span class="code-keyword">def</span> <span class="code-variable">fun_fact</span>(<span class="code-property">self</span>):
-        <span class="code-keyword">return</span> <span class="code-string">"If it runs twice, I automate it"</span>
+        <span class="code-keyword">return</span> <span class="code-string">"I know enough to be dangerous"</span>  <span class="code-comment"># and humble enough to admit it</span>
 
     <span class="code-keyword">def</span> <span class="code-variable">automate</span>(<span class="code-property">self</span>, task):
-        <span class="code-keyword">return</span> task.replace(
-            <span class="code-string">"manual"</span>, <span class="code-string">"automated"</span>
-        )
+        <span class="code-keyword">return</span> task.replace(<span class="code-string">"manual"</span>, <span class="code-string">"automated"</span>)  <span class="code-comment"># works most of the time</span>
 </code></pre>
-                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="about-stats fade-in">
-                <div class="stat-item">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Scripts & Tools Built</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">3+</div>
-                    <div class="stat-label">Frameworks Contributed</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Tests Automated</div>
-                </div>
-            </div>
-
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="skills">
         <h2>Skills</h2>
