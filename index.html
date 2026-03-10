@@ -8,6 +8,7 @@
     <meta name="author" content="astralborn">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 <!-- Terminal Boot Screen -->
@@ -157,10 +158,10 @@
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">40+</div>
-                        <div class="stat-label">Scripts & Tools Built</div>
+                        <div class="stat-label">Scripts & Tools</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">∞</div>
+                        <i class="fa-solid fa-infinity" style="color: #00FF8C; font-size: 2.5rem;"></i>
                         <div class="stat-label">Tests Automated</div>
                     </div>
                 </div>
@@ -304,9 +305,9 @@
     <div class="projects-grid">
         <div class="project-card fade-in" style="display: flex; flex-direction: column;">
             <h3>🌉 WSL Port Bridge</h3>
-            <p>Python utility that bridges Windows and WSL network ports — built to solve a real daily pain point when running test environments across both systems.</p>
-            <div style="margin-top: auto; padding-top: 1.5rem;">
-                <div class="blog-tags" style="margin-bottom: 1rem;">
+            <p>WSL network isolation blocks UDP packet forwarding to the Windows host by default. Built a utility to bridge that gap, enabling UDP packet forwarding from WSL to the Windows host without manual workarounds.</p>
+            <div style="margin-top: auto; padding-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                <div class="blog-tags" style="justify-content: center;">
                     <span class="blog-tag">Python</span>
                     <span class="blog-tag">Networking</span>
                     <span class="blog-tag">WSL</span>
@@ -317,9 +318,9 @@
 
         <div class="project-card fade-in" style="display: flex; flex-direction: column; animation-delay: 0.1s;">
             <h3>🔌 API Tester</h3>
-            <p>Lightweight Python REST API validation tool. Built as a custom alternative to heavier clients — fast to run, easy to integrate into a test pipeline.</p>
-            <div style="margin-top: auto; padding-top: 1.5rem;">
-                <div class="blog-tags" style="margin-bottom: 1rem;">
+            <p>Desktop QA tool for API testing with a PySide6 UI. Runs single or batch requests, auto-generates happy and unhappy test payloads, and logs everything. Supports HTTP Digest auth and self-signed certificates.</p>
+            <div style="margin-top: auto; padding-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                <div class="blog-tags" style="justify-content: center;">
                     <span class="blog-tag">Python</span>
                     <span class="blog-tag">API Testing</span>
                     <span class="blog-tag">PySide6</span>
@@ -331,8 +332,8 @@
         <div class="project-card fade-in" style="display: flex; flex-direction: column; animation-delay: 0.2s;">
             <h3>🖥️ This Portfolio</h3>
             <p>Personal site built as a side project — terminal boot screen, scroll animations, zero dependencies. You're looking at it.</p>
-            <div style="margin-top: auto; padding-top: 1.5rem;">
-                <div class="blog-tags" style="margin-bottom: 1rem;">
+            <div style="margin-top: auto; padding-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                <div class="blog-tags" style="justify-content: center;">
                     <span class="blog-tag">JavaScript</span>
                     <span class="blog-tag">CSS</span>
                     <span class="blog-tag">HTML</span>
