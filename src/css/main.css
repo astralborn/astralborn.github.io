@@ -20,7 +20,6 @@
     transition: opacity 0.5s ease-out;
 }
 
-/* End of file - signed: serozr */
 
 .boot-screen.fade-out {
     opacity: 0;
@@ -224,7 +223,7 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    padding-top: 10px;
+    padding-top: 80px;
 }
 
 .hero-content {
