@@ -9,7 +9,7 @@ Tested with Pytest + Playwright.
 
 ---
 
-[![Preview](https://image.thum.io/get/width/1400/https://astralborn.github.io)](https://astralborn.github.io)
+[![Preview](src/assets/images/mockup.png)](https://astralborn.github.io)
 
 ---
 
