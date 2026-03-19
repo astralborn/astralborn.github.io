@@ -1,11 +1,12 @@
-# astralborn
+<div align="center">
 
-Personal portfolio site — terminal-inspired design, scroll animations, cyberpunk aesthetic.  
-Tested with Pytest + Playwright.
+Personal portfolio site — terminal-inspired design, scroll animations, cyberpunk aesthetic.
 
 <a href="https://astralborn.github.io">
   <img src="https://img.shields.io/badge/Check_it_out-00FF8C?style=for-the-badge&logoColor=black" alt="Portfolio" />
 </a>
+
+</div>
 
 ---
 
