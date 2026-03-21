@@ -33,6 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Clipboard copy links ---
+    document.querySelectorAll('.copy-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navigator.clipboard.writeText(link.getAttribute('data-copy'));
+            const confirm = link.nextElementSibling;
+            confirm.style.opacity = '1';
+            setTimeout(() => confirm.style.opacity = '0', 1500);
+        });
+    });
+
     // --- Lazy section reveal ---
     const lazyObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

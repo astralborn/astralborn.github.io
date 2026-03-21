@@ -101,9 +101,6 @@
                     <p class="output"><span class="prompt">&gt;</span> Embedded Systems & CI/CD</p>
                     <p class="output"><span class="prompt">&gt;</span> Python · Pytest · Playwright</p>
                     <br>
-<!--                    <p><span class="prompt">$</span> <span class="command">cat github-link.txt</span></p>-->
-<!--                    <p class="output">GitHub: <a href="https://github.com/astralborn" target="_blank" class="link">github.com/astralborn</a></p>-->
-<!--                    <br>-->
                     <p><span class="prompt">$</span> <span class="command">./navigate.sh</span></p>
                     <p class="output">Select destination:</p>
                     <a href="#projects" style="
@@ -212,7 +209,7 @@
 
             <p style="margin-bottom: 1rem;"><span class="prompt">$</span><span class="command"> skills --list --verbose</span></p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem 4rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 4rem;">
 
                 <!-- LEFT: Automation -->
                 <div>
@@ -250,7 +247,7 @@
                     <span class="blog-tag">Networking</span>
                     <span class="blog-tag">WSL</span>
                 </div>
-                <a href="https://github.com/Astralborn/WindowsWslPortBridge" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                <a href="https://github.com/Astralborn/WindowsWslPortBridge" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
             </div>
         </div>
 
@@ -263,7 +260,7 @@
                     <span class="blog-tag">API Testing</span>
                     <span class="blog-tag">PySide6</span>
                 </div>
-                <a href="https://github.com/Astralborn/API-tester" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                <a href="https://github.com/Astralborn/API-tester" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
             </div>
         </div>
 
@@ -276,7 +273,7 @@
                     <span class="blog-tag">CSS</span>
                     <span class="blog-tag">HTML</span>
                 </div>
-                <a href="https://github.com/astralborn/astralborn.github.io" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                <a href="https://github.com/astralborn/astralborn.github.io" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
             </div>
         </div>
     </div>
@@ -310,7 +307,7 @@
                 <p><span class="prompt">$</span><span class="command"> view-code --platform=github</span></p>
                 <p>
                     <span class="prompt">&gt;</span>
-                    <a href="https://github.com/astralborn" target="_blank" class="link copy-link" data-copy="github.com/astralborn" style="font-size: 1.05rem;">github.com/astralborn</a>
+                    <a href="https://github.com/astralborn" target="_blank" rel="noopener noreferrer" class="link copy-link" data-copy="github.com/astralborn" style="font-size: 1.05rem;">github.com/astralborn</a>
                     <span class="copy-confirm" style="color: #00FF8C; font-size: 0.8rem; margin-left: 0.5rem; opacity: 0; transition: opacity 0.3s;">[COPIED]</span>
                 </p>
 
@@ -319,7 +316,7 @@
                 <p><span class="prompt">$</span><span class="command"> connect --platform=linkedin</span></p>
                 <p>
                     <span class="prompt">&gt;</span>
-                    <a href="https://linkedin.com/in/stas-nikolaievskyi" target="_blank" class="link copy-link" data-copy="linkedin.com/in/stas-nikolaievskyi" style="font-size: 1.05rem;">linkedin.com/in/stas-nikolaievskyi</a>
+                    <a href="https://linkedin.com/in/stas-nikolaievskyi" target="_blank" rel="noopener noreferrer" class="link copy-link" data-copy="linkedin.com/in/stas-nikolaievskyi" style="font-size: 1.05rem;">linkedin.com/in/stas-nikolaievskyi</a>
                     <span class="copy-confirm" style="color: #00FF8C; font-size: 0.8rem; margin-left: 0.5rem; opacity: 0; transition: opacity 0.3s;">[COPIED]</span>
                 </p>
 
@@ -330,17 +327,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.querySelectorAll('.copy-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navigator.clipboard.writeText(link.getAttribute('data-copy'));
-                const confirm = link.nextElementSibling;
-                confirm.style.opacity = '1';
-                setTimeout(() => confirm.style.opacity = '0', 1500);
-            });
-        });
-    </script>
 </section>
 
 <footer>
