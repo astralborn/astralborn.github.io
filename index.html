@@ -202,47 +202,38 @@
 
 <section id="skills">
     <h2>Skills</h2>
-    <div style="max-width: 640px; margin: 3rem auto;">
-        <div class="terminal-window fade-in">
-            <div class="terminal-header">
-                <div class="terminal-dot dot-red"></div>
-                <div class="terminal-dot dot-yellow"></div>
-                <div class="terminal-dot dot-green"></div>
-            </div>
-            <div class="terminal-text" style="line-height: 2;">
+    <div class="terminal-window fade-in" style="max-width: 100%; margin-top: 2rem;">
+        <div class="terminal-header">
+            <div class="terminal-dot dot-red"></div>
+            <div class="terminal-dot dot-yellow"></div>
+            <div class="terminal-dot dot-green"></div>
+        </div>
+        <div class="terminal-text" style="line-height: 2; font-size: 1.1rem; padding: 0.5rem 1rem;">
 
-                <p><span class="prompt">$</span><span class="command"> skills --list --verbose</span></p>
+            <p style="margin-bottom: 1rem;"><span class="prompt">$</span><span class="command"> skills --list --verbose</span></p>
 
-                <br>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 4rem;">
 
-                <p style="color: #00D9FF; font-size: 0.85rem;"># Programming & Automation</p>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">Python</span><span style="color:#00FF8C; letter-spacing:3px;">█████</span><span style="color:#555; font-size:0.75rem;">proficient</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">Pytest</span><span style="color:#00FF8C; letter-spacing:3px;">█████</span><span style="color:#555; font-size:0.75rem;">proficient</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">Playwright</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#555; font-size:0.75rem;">advanced</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">PySide</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#555; font-size:0.75rem;">advanced</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">JavaScript</span><span style="color:#00a86b; letter-spacing:3px;">███░░</span><span style="color:#555; font-size:0.75rem;">intermediate</span></div>
+                <!-- LEFT: Automation -->
+                <div>
+                    <p style="color: #00D9FF; font-size: 0.9rem; margin-bottom: 0.5rem;"># Automation</p>
+                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:140px;">Python</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#00cc88; font-size:0.85rem; margin-left:0.5rem;">advanced</span></div>
+                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:140px;">Pytest</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#00cc88; font-size:0.85rem; margin-left:0.5rem;">advanced</span></div>
+                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:140px;">Playwright</span><span style="color:#00a86b; letter-spacing:3px;">███░░</span><span style="color:#00a86b; font-size:0.85rem; margin-left:0.5rem;">solid</span></div>
+                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:140px;">JavaScript</span><span style="color:#557a55; letter-spacing:3px;">██░░░</span><span style="color:#557a55; font-size:0.85rem; margin-left:0.5rem;">basic</span></div>
+                </div>
 
-                <br>
-
-                <p style="color: #00D9FF; font-size: 0.85rem;"># Embedded Systems & Networking</p>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">Linux</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#555; font-size:0.75rem;">advanced</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">EtherNet/IP</span><span style="color:#00FF8C; letter-spacing:3px;">█████</span><span style="color:#555; font-size:0.75rem;">proficient</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">TCP/IP</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#555; font-size:0.75rem;">advanced</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">VoIP</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#555; font-size:0.75rem;">advanced</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">WSL</span><span style="color:#00FF8C; letter-spacing:3px;">█████</span><span style="color:#555; font-size:0.75rem;">proficient</span></div>
-
-                <br>
-
-                <p style="color: #00D9FF; font-size: 0.85rem;"># Testing & CI/CD</p>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">TDD</span><span style="color:#00FF8C; letter-spacing:3px;">█████</span><span style="color:#555; font-size:0.75rem;">proficient</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">BDD</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#555; font-size:0.75rem;">advanced</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">Jenkins</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#555; font-size:0.75rem;">advanced</span></div>
-                <div style="display:flex; align-items:center; gap:1rem;"><span style="width:120px;">Git</span><span style="color:#00FF8C; letter-spacing:3px;">█████</span><span style="color:#555; font-size:0.75rem;">proficient</span></div>
-
-                <br>
-                <p><span class="prompt">&gt;</span> <span style="display: inline-block; animation: cursor-blink 1s step-end infinite;">█</span></p>
+                <!-- RIGHT: Domain & Tools -->
+                <div>
+                    <p style="color: #00D9FF; font-size: 0.9rem; margin-bottom: 0.5rem;"># Domain & Tools</p>
+                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:170px; white-space:nowrap;">Packet analysis</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#00cc88; font-size:0.85rem; margin-left:0.5rem;">advanced</span></div>
+                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:170px;">Jenkins</span><span style="color:#00a86b; letter-spacing:3px;">███░░</span><span style="color:#00a86b; font-size:0.85rem; margin-left:0.5rem;">solid</span></div>
+                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:170px;">Git</span><span style="color:#00a86b; letter-spacing:3px;">███░░</span><span style="color:#00a86b; font-size:0.85rem; margin-left:0.5rem;">solid</span></div>
+                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:170px;">Linux</span><span style="color:#00a86b; letter-spacing:3px;">███░░</span><span style="color:#00a86b; font-size:0.85rem; margin-left:0.5rem;">solid</span></div>
+                </div>
 
             </div>
+
         </div>
     </div>
 </section>
