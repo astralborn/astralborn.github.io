@@ -1166,7 +1166,10 @@ footer .signature {
         grid-template-columns: 1fr !important;
         gap: 1.5rem 0 !important;
     }
-
+    /* Skill name spans: shrink on mobile */
+    .terminal-text span[style*="min-width"] {
+        min-width: 100px !important;
+    }
     /* Terminal window: full width */
     .terminal-window {
         max-width: 100% !important;
