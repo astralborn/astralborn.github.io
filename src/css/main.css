@@ -1139,3 +1139,50 @@ footer .signature {
         flex-direction: column;
     }
 }
+@media (max-width: 768px) {
+    /* Hero: stack photo + terminal */
+    .hero-content > div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        height: auto !important;
+    }
+
+    .hero-content img {
+        height: 280px !important;
+        width: 100% !important;
+    }
+
+    .hero-content .terminal-window {
+        height: auto !important;
+        margin: 0 !important;
+    }
+
+    /* About: stack text + code window */
+    .about-content {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Skills: stack two columns */
+    [style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem 0 !important;
+    }
+    /* Skill name spans: shrink on mobile */
+    .terminal-text span[style*="min-width"] {
+        min-width: 100px !important;
+    }
+    /* Terminal window: full width */
+    .terminal-window {
+        max-width: 100% !important;
+    }
+
+    /* Skills section: reduce padding */
+    #skills {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Skill rows: prevent overflow */
+    .terminal-text div[style*="display:flex"] {
+        font-size: 0.9rem !important;
+    }
+}
