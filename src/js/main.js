@@ -56,42 +56,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Lazy section reveal ---
-    const lazyObserver = new IntersectionObserver((entries) => {
+    // --- Unified reveal observer (sections + fade-in elements) ---
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                lazyObserver.unobserve(entry.target);
+                const el = entry.target;
+                // section lazy reveal
+                el.classList.add('visible');
+                // fade-in inline style reveal
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+                revealObserver.unobserve(el);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
 
     document.querySelectorAll('section').forEach(section => {
         section.classList.add('lazy-section');
-        lazyObserver.observe(section);
+        revealObserver.observe(section);
     });
-});
 
-// --- Fade-in observer ---
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        revealObserver.observe(el);
     });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
 });
 
 // --- Skill bar observer ---
