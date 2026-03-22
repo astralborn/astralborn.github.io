@@ -12,17 +12,17 @@
 .nav-links a.btn-cv {
     padding: 0.4rem 1rem;
     font-size: 0.85rem;
-    background: #00cc70;
+    background: #00FF8C;
     color: #0a0a0a !important;
     font-weight: bold;
-    box-shadow: 0 0 8px rgba(0, 180, 100, 0.3);
+    box-shadow: 0 0 8px rgba(0, 255, 140, 0.2);
     transition: all 0.3s;
 }
 
 .nav-links a.btn-cv:hover {
-    background: #00a85c;
+    background: #00e07a;
     color: #0a0a0a !important;
-    box-shadow: 0 0 12px rgba(0, 180, 100, 0.4);
+    box-shadow: 0 0 12px rgba(0, 255, 140, 0.35);
 }
 
 /* --- Hero grid --- */
