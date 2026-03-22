@@ -114,13 +114,13 @@ document.querySelectorAll('.skill-category').forEach(category => {
     skillObserver.observe(category);
 });
 
-// --- Nav menu toggle ---
-function toggleMenu() {
+// --- Nav menu toggle (explicit globals so onclick="" attrs work even with type="module") ---
+window.toggleMenu = function () {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('active');
-}
+};
 
-function closeMenu() {
+window.closeMenu = function () {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.remove('active');
-}
+};
