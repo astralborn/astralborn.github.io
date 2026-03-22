@@ -13,10 +13,10 @@
 .btn-cv {
     padding: 0.4rem 1rem;
     font-size: 0.85rem;
-    background: #00FF8C;
-    color: #121212;
+    background: #00cc70;
+    color: #0a0a0a;
     font-weight: bold;
-    box-shadow: 0 0 15px rgba(0, 255, 140, 0.5);
+    box-shadow: 0 0 8px rgba(0, 180, 100, 0.3);
 }
 
 /* --- Hero grid --- */
