@@ -33,13 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Clipboard copy links ---
-    document.querySelectorAll('.copy-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navigator.clipboard.writeText(link.getAttribute('data-copy'));
-            const confirm = link.nextElementSibling;
-            confirm.style.opacity = '1';
-            setTimeout(() => confirm.style.opacity = '0', 1500);
+    // --- Clipboard copy buttons ---
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const text = btn.getAttribute('data-copy');
+            const confirm = btn.nextElementSibling;
+            try {
+                await navigator.clipboard.writeText(text);
+                btn.textContent = '[✓]';
+                setTimeout(() => btn.textContent = '[copy]', 1500);
+            } catch {
+                // Fallback: show manual copy hint
+                if (confirm) {
+                    confirm.textContent = '[SELECT & COPY]';
+                    confirm.style.opacity = '1';
+                    setTimeout(() => {
+                        confirm.style.opacity = '0';
+                        confirm.textContent = '[COPIED]';
+                    }, 2000);
+                }
+            }
         });
     });
 
