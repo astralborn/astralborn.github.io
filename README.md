@@ -69,3 +69,5 @@ Hosted on **GitHub Pages** from the `main` branch root. Push to `main` and the s
 ---
 
 *Built with vanilla JS and the audacity to not use React.*
+
+---
