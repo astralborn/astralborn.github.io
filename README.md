@@ -7,10 +7,6 @@ Personal portfolio — terminal-inspired, cyberpunk aesthetic, zero dependencies
 <a href="https://astralborn.github.io">
   <img src="https://img.shields.io/badge/Live_Site-00FF8C?style=for-the-badge&logoColor=black" alt="Live site" />
 </a>
-&nbsp;
-<a href="https://astralborn.github.io/src/assets/CV_astralborn.pdf">
-  <img src="https://img.shields.io/badge/Download_CV-00D9FF?style=for-the-badge&logoColor=black" alt="CV" />
-</a>
 
 </div>
 
