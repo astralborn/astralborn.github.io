@@ -1,12 +1,33 @@
 /* =============================================================
    components.css — styles moved out of inline HTML attributes
-   Add this file to src/css/ and link it in index.html
    ============================================================= */
 
-/* --- Active nav link --- */
+/* --- Active nav link ---
+   FIX: replaced hardcoded text-shadow glow with a clean border-bottom
+   underline that transitions smoothly and works in any colour scheme --- */
+.nav-links a {
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00FF8C;
+    transition: width 0.25s ease;
+}
+
+.nav-links a.nav-active::after,
+.nav-links a:hover::after {
+    width: 100%;
+}
+
 .nav-links a.nav-active {
     color: #00FF8C;
-    text-shadow: 0 0 8px rgba(0, 255, 140, 0.6);
 }
 
 .nav-links a.btn-cv {
@@ -23,6 +44,11 @@
     background: #00e07a;
     color: #0a0a0a !important;
     box-shadow: 0 0 12px rgba(0, 255, 140, 0.35);
+}
+
+/* btn-cv gets no underline — it already has a filled background */
+.nav-links a.btn-cv::after {
+    display: none;
 }
 
 /* --- Hero grid --- */
@@ -53,7 +79,7 @@
     margin: 0;
 }
 
-/* --- Terminal nav links (replaces inline style + onmouseover/onmouseout) --- */
+/* --- Terminal nav links --- */
 .terminal-nav-link {
     display: block;
     color: #00FF8C;
@@ -230,7 +256,7 @@
     font-size: 0.9rem;
 }
 
-/* --- Mobile overrides for extracted classes --- */
+/* --- Mobile overrides --- */
 @media (max-width: 768px) {
     .hero-grid {
         grid-template-columns: 1fr;
@@ -260,5 +286,9 @@
 
     .skill-name-col--wide {
         min-width: 100px;
+    }
+
+    .nav-links a::after {
+        display: none;
     }
 }

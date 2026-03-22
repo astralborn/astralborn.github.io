@@ -1,4 +1,3 @@
-// Boot Screen Animation
 document.addEventListener('DOMContentLoaded', () => {
     // --- Boot screen ---
     const bootScreen = document.getElementById('bootScreen');
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     };
 
-    setTimeout(skipBoot, 6000); // 6 seconds total boot time
+    setTimeout(skipBoot, 6000);
     document.addEventListener('keydown', skipBoot, { once: true });
     bootScreen.addEventListener('click', skipBoot, { once: true });
 
@@ -40,10 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (target) {
                     const offset = 20;
                     const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
             }
         });
@@ -59,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.textContent = '[✓]';
                 setTimeout(() => btn.textContent = '[copy]', 1500);
             } catch {
-                // Fallback: show manual copy hint
                 if (confirm) {
                     confirm.textContent = '[SELECT & COPY]';
                     confirm.style.opacity = '1';
@@ -72,14 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Unified reveal observer (sections + fade-in elements) ---
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const el = entry.target;
-                // section lazy reveal
                 el.classList.add('visible');
-                // fade-in inline style reveal
                 el.style.opacity = '1';
                 el.style.transform = 'translateY(0)';
                 revealObserver.unobserve(el);
@@ -98,29 +90,27 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.6s ease-out';
         revealObserver.observe(el);
     });
-});
 
-// --- Skill bar observer ---
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const progressBars = entry.target.querySelectorAll('.skill-progress');
-            progressBars.forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 100);
-            });
-            skillObserver.unobserve(entry.target);
-        }
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBars = entry.target.querySelectorAll('.skill-progress');
+                progressBars.forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.skill-category').forEach(category => {
+        skillObserver.observe(category);
     });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.skill-category').forEach(category => {
-    skillObserver.observe(category);
 });
 
-// --- Nav menu toggle (explicit globals so onclick="" attrs work even with type="module") ---
 window.toggleMenu = function () {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('active');
