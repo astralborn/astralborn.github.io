@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Footer year ---
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     // --- Boot screen ---
     const bootScreen = document.getElementById('bootScreen');
 
@@ -91,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
+    // --- FIX: skillObserver moved inside DOMContentLoaded so .skill-category
+    //     elements are guaranteed to exist when querySelectorAll runs ---
     const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -111,6 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+// --- Nav menu toggle ---
 window.toggleMenu = function () {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('active');
