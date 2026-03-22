@@ -14,6 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', skipBoot, { once: true });
     bootScreen.addEventListener('click', skipBoot, { once: true });
 
+    // --- Active nav highlight on scroll ---
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => link.classList.remove('nav-active'));
+                const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                if (active) active.classList.add('nav-active');
+            }
+        });
+    }, { threshold: 0.4 });
+
+    sections.forEach(section => navObserver.observe(section));
+
     // --- Smooth scroll for anchor links ---
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
