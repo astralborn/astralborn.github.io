@@ -1,48 +1,106 @@
 // Boot Screen Animation
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Boot screen ---
     const bootScreen = document.getElementById('bootScreen');
-    
-    // Hide boot screen after animation completes
-    setTimeout(() => {
-        bootScreen.classList.add('fade-out');
-        setTimeout(() => {
-            bootScreen.style.display = 'none';
-        }, 500);
-    }, 6000); // 6 seconds total boot time
-    
-    // Allow skipping with any key press or click
+
     const skipBoot = () => {
         bootScreen.classList.add('fade-out');
         setTimeout(() => {
             bootScreen.style.display = 'none';
         }, 500);
     };
-    
+
+    setTimeout(skipBoot, 6000); // 6 seconds total boot time
     document.addEventListener('keydown', skipBoot, { once: true });
     bootScreen.addEventListener('click', skipBoot, { once: true });
-});
 
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
+    // --- Active nav highlight on scroll ---
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => link.classList.remove('nav-active'));
+                const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                if (active) active.classList.add('nav-active');
+            }
+        });
+    }, { threshold: 0.4 });
+
+    sections.forEach(section => navObserver.observe(section));
+
+    // --- Smooth scroll for anchor links ---
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const offset = 20;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
     });
-}, observerOptions);
 
-document.querySelectorAll('.fade-in').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
+    // --- Clipboard copy buttons ---
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const text = btn.getAttribute('data-copy');
+            const confirm = btn.nextElementSibling;
+            try {
+                await navigator.clipboard.writeText(text);
+                btn.textContent = '[✓]';
+                setTimeout(() => btn.textContent = '[copy]', 1500);
+            } catch {
+                // Fallback: show manual copy hint
+                if (confirm) {
+                    confirm.textContent = '[SELECT & COPY]';
+                    confirm.style.opacity = '1';
+                    setTimeout(() => {
+                        confirm.style.opacity = '0';
+                        confirm.textContent = '[COPIED]';
+                    }, 2000);
+                }
+            }
+        });
+    });
+
+    // --- Unified reveal observer (sections + fade-in elements) ---
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                // section lazy reveal
+                el.classList.add('visible');
+                // fade-in inline style reveal
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+                revealObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('lazy-section');
+        revealObserver.observe(section);
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        revealObserver.observe(el);
+    });
 });
 
+// --- Skill bar observer ---
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -62,56 +120,13 @@ document.querySelectorAll('.skill-category').forEach(category => {
     skillObserver.observe(category);
 });
 
-function toggleMenu() {
+// --- Nav menu toggle (explicit globals so onclick="" attrs work even with type="module") ---
+window.toggleMenu = function () {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('active');
-}
+};
 
-function closeMenu() {
+window.closeMenu = function () {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.remove('active');
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    const offset = 20; // scroll offset
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-
-    const lazyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                lazyObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('lazy-section');
-        lazyObserver.observe(section);
-    });
-});
-
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-    if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-    }
-    scrollTimeout = setTimeout(() => {
-        document.body.style.overflowY = 'auto';
-    }, 150);
-}, { passive: true });
+};

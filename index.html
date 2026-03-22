@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>astralborn | Personal Web </title>
-    <meta name="description" content="Cool personal web with terminal-inspired design">
+    <meta name="description" content="Stanislav N. — Test Automation Engineer based in Prague. Python, Pytest, Playwright, embedded systems, CI/CD.">
     <meta name="author" content="astralborn">
     <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/components.css">
     <link rel="stylesheet" href="src/css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
+
 <!-- Terminal Boot Screen -->
 <div id="bootScreen" class="boot-screen">
     <div class="boot-content">
         <div class="boot-header">
-                <pre class="ascii-art">
+            <pre class="ascii-art">
 
             _             _ _                      
    __ _ ___| |_ _ __ __ _| | |__   ___  _ __ _ __
@@ -25,7 +26,7 @@
   \__,_|___/\__|_|  \__,_|_|_.__/ \___/|_|  |_| |_|
 
 
-                </pre>
+            </pre>
         </div>
         <div class="boot-terminal">
             <p><span class="boot-prompt">[SYSTEM]</span> <span class="boot-text">Initializing test environment...</span></p>
@@ -57,7 +58,7 @@
             <a href="#skills" onclick="closeMenu()">Skills</a>
             <a href="#projects" onclick="closeMenu()">Projects</a>
             <a href="#contact" onclick="closeMenu()">Contact</a>
-            <a href="src/assets/CV_astralborn.pdf" target="_blank" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.85rem; background: #00FF8C; color: #121212; font-weight: bold; box-shadow: 0 0 15px rgba(0, 255, 140, 0.5);"> >> View CV</a>
+            <a href="src/assets/CV_astralborn.pdf" target="_blank" class="btn btn-primary btn-cv"> >> View CV</a>
         </div>
     </div>
 </nav>
@@ -67,28 +68,12 @@
         <div class="tag">// test automation engineer</div>
         <p class="subtitle">Automation author. Manual work arsonist.</p>
 
-        <div style="
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: stretch;
-            margin: 2rem auto;
-            max-width: 900px;
-            height: 380px;
-        ">
+        <div class="hero-grid">
             <!-- PHOTO LEFT -->
-            <img src="src/assets/images/photo.png" alt="astralborn" style="
-                width: 100%;
-                height: 80%;
-                object-fit: cover;
-                object-position: top;
-                border-radius: 15px;
-                border: 1px solid rgba(0, 255, 140, 0.3);
-                box-shadow: 0 0 40px rgba(0, 255, 140, 0.25);
-            "/>
+            <img src="src/assets/images/photo.png" alt="Stanislav N., Test Automation Engineer" class="hero-photo"/>
 
             <!-- TERMINAL RIGHT -->
-            <div class="terminal-window" style="height: 80%; margin: 0;">
+            <div class="terminal-window hero-terminal">
                 <div class="terminal-header">
                     <div class="terminal-dot dot-red"></div>
                     <div class="terminal-dot dot-yellow"></div>
@@ -101,69 +86,39 @@
                     <p class="output"><span class="prompt">&gt;</span> Embedded Systems & CI/CD</p>
                     <p class="output"><span class="prompt">&gt;</span> Python · Pytest · Playwright</p>
                     <br>
-<!--                    <p><span class="prompt">$</span> <span class="command">cat github-link.txt</span></p>-->
-<!--                    <p class="output">GitHub: <a href="https://github.com/astralborn" target="_blank" class="link">github.com/astralborn</a></p>-->
-<!--                    <br>-->
                     <p><span class="prompt">$</span> <span class="command">./navigate.sh</span></p>
                     <p class="output">Select destination:</p>
-                    <a href="#projects" style="
-                        display: block;
-                        color: #00FF8C;
-                        text-decoration: none;
-                        font-family: 'Courier New', monospace;
-                        padding: 0.3rem 0.5rem;
-                        border: 1px solid rgba(0, 255, 140, 0.3);
-                        border-radius: 4px;
-                        margin: 0.3rem 0;
-                        transition: all 0.2s;
-                    " onmouseover="this.style.background='rgba(0,255,140,0.1)'; this.style.borderColor='#00FF8C';"
-                       onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(0,255,140,0.3)';">
-                        [1] cd projects
-                    </a>
-                    <a href="#contact" style="
-                        display: block;
-                        color: #00FF8C;
-                        text-decoration: none;
-                        font-family: 'Courier New', monospace;
-                        padding: 0.3rem 0.5rem;
-                        border: 1px solid rgba(0, 255, 140, 0.3);
-                        border-radius: 4px;
-                        margin: 0.3rem 0;
-                        transition: all 0.2s;
-                    " onmouseover="this.style.background='rgba(0,255,140,0.1)'; this.style.borderColor='#00FF8C';"
-                       onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(0,255,140,0.3)';">
-                        [2] ./contact.sh
-                    </a>
-                    <p><span class="prompt">&gt;</span> <span style="display: inline-block; animation: cursor-blink 1s step-end infinite;">█</span></p>
+                    <a href="#projects" class="terminal-nav-link">[1] cd projects</a>
+                    <a href="#contact" class="terminal-nav-link">[2] ./contact.sh</a>
+                    <p><span class="prompt">&gt;</span> <span class="cursor">█</span></p>
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 
 <section id="about">
     <h2>About Me</h2>
     <div class="about-container">
-        <div class="about-content fade-in" style="grid-template-columns: 1fr 0.8fr;">
-            <div class="about-text" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                <p class="about-intro" style="font-size: 1.1rem; line-height: 1.8;">
+        <div class="about-content about-content--custom fade-in">
+            <div class="about-text about-text-col">
+                <p class="about-intro">
                     Hi! I'm <span class="highlight">astralborn</span>,<br>
                     a Test Automation Engineer based in Prague.<br><br>
                     I build Python test frameworks, own CI/CD pipelines, and push test coverage
                     from embedded systems to web UI. Good enough never is. Neither are escaped defects.
                 </p>
-                <div class="about-stats" style="margin-top: auto;">
+                <div class="about-stats about-stats--push">
                     <div class="stat-item">
                         <div class="stat-number">3+</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                     <div class="stat-item">
-                        <i class="fa-brands fa-python" style="color: #00FF8C; font-size: 2.5rem;"></i>
+                        <i class="fa-brands fa-python stat-icon"></i>
                         <div class="stat-label">Primary Weapon</div>
                     </div>
                     <div class="stat-item">
-                        <i class="fa-solid fa-infinity" style="color: #00FF8C; font-size: 2.5rem;"></i>
+                        <i class="fa-solid fa-infinity stat-icon"></i>
                         <div class="stat-label">Tests Automated</div>
                     </div>
                 </div>
@@ -177,7 +132,7 @@
                         <div class="code-dot dot-green"></div>
                         <span class="code-title">about.py</span>
                     </div>
-                    <div class="code-content" style="overflow-x: auto; max-width: 100%; font-size: 1.2rem;">
+                    <div class="code-content code-content--large">
 <pre><code><span class="code-keyword">class</span> <span class="code-variable">Engineer</span>:
     <span class="code-keyword">def</span> <span class="code-variable">__init__</span>(<span class="code-property">self</span>):
         <span class="code-property">self</span>.name          = <span class="code-string">"Stanislav N."</span>
@@ -202,38 +157,37 @@
 
 <section id="skills">
     <h2>Skills</h2>
-    <div class="terminal-window fade-in" style="max-width: 100%; margin-top: 2rem;">
+    <div class="terminal-window skills-terminal fade-in">
         <div class="terminal-header">
             <div class="terminal-dot dot-red"></div>
             <div class="terminal-dot dot-yellow"></div>
             <div class="terminal-dot dot-green"></div>
         </div>
-        <div class="terminal-text" style="line-height: 2; font-size: 1.1rem; padding: 0.5rem 1rem;">
+        <div class="terminal-text skills-terminal-text">
 
-            <p style="margin-bottom: 1rem;"><span class="prompt">$</span><span class="command"> skills --list --verbose</span></p>
+            <p class="skills-heading"><span class="prompt">$</span><span class="command"> skills --list --verbose</span></p>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 4rem;">
+            <div class="skills-cols">
 
                 <!-- LEFT: Automation -->
                 <div>
-                    <p style="color: #00D9FF; font-size: 0.9rem; margin-bottom: 0.5rem;"># Automation</p>
-                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:140px;">Python</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#00cc88; font-size:0.85rem; margin-left:0.5rem;">proficient</span></div>
-                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:140px;">Pytest</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#00cc88; font-size:0.85rem; margin-left:0.5rem;">proficient</span></div>
-                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:140px;">Playwright</span><span style="color:#00a86b; letter-spacing:3px;">███░░</span><span style="color:#00a86b; font-size:0.85rem; margin-left:0.5rem;">solid</span></div>
-                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:140px;">JavaScript</span><span style="color:#557a55; letter-spacing:3px;">██░░░</span><span style="color:#557a55; font-size:0.85rem; margin-left:0.5rem;">basic</span></div>
+                    <p class="skill-cat-heading"># Automation</p>
+                    <div class="skill-row"><span class="skill-name-col">Python</span><span class="skill-bar-proficient">████░</span><span class="skill-label skill-label--proficient">proficient</span></div>
+                    <div class="skill-row"><span class="skill-name-col">Pytest</span><span class="skill-bar-proficient">████░</span><span class="skill-label skill-label--proficient">proficient</span></div>
+                    <div class="skill-row"><span class="skill-name-col">Playwright</span><span class="skill-bar-solid">███░░</span><span class="skill-label skill-label--solid">solid</span></div>
+                    <div class="skill-row"><span class="skill-name-col">JavaScript</span><span class="skill-bar-basic">██░░░</span><span class="skill-label skill-label--basic">basic</span></div>
                 </div>
 
                 <!-- RIGHT: Domain & Tools -->
                 <div>
-                    <p style="color: #00D9FF; font-size: 0.9rem; margin-bottom: 0.5rem;"># Domain & Tools</p>
-                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:170px; white-space:nowrap;">Packet analysis</span><span style="color:#00cc88; letter-spacing:3px;">████░</span><span style="color:#00cc88; font-size:0.85rem; margin-left:0.5rem;">proficient</span></div>
-                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:170px;">Jenkins</span><span style="color:#00a86b; letter-spacing:3px;">███░░</span><span style="color:#00a86b; font-size:0.85rem; margin-left:0.5rem;">solid</span></div>
-                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:170px;">Git</span><span style="color:#00a86b; letter-spacing:3px;">███░░</span><span style="color:#00a86b; font-size:0.85rem; margin-left:0.5rem;">solid</span></div>
-                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.3rem;"><span style="min-width:170px;">Linux</span><span style="color:#00a86b; letter-spacing:3px;">███░░</span><span style="color:#00a86b; font-size:0.85rem; margin-left:0.5rem;">solid</span></div>
+                    <p class="skill-cat-heading"># Domain & Tools</p>
+                    <div class="skill-row"><span class="skill-name-col skill-name-col--wide">Packet analysis</span><span class="skill-bar-proficient">████░</span><span class="skill-label skill-label--proficient">proficient</span></div>
+                    <div class="skill-row"><span class="skill-name-col skill-name-col--wide">Jenkins</span><span class="skill-bar-solid">███░░</span><span class="skill-label skill-label--solid">solid</span></div>
+                    <div class="skill-row"><span class="skill-name-col skill-name-col--wide">Git</span><span class="skill-bar-solid">███░░</span><span class="skill-label skill-label--solid">solid</span></div>
+                    <div class="skill-row"><span class="skill-name-col skill-name-col--wide">Linux</span><span class="skill-bar-solid">███░░</span><span class="skill-label skill-label--solid">solid</span></div>
                 </div>
 
             </div>
-
         </div>
     </div>
 </section>
@@ -241,42 +195,42 @@
 <section id="projects">
     <h2>Featured Projects</h2>
     <div class="projects-grid">
-        <div class="project-card fade-in" style="display: flex; flex-direction: column;">
+        <div class="project-card project-card--col fade-in">
             <h3>🌉 WSL Port Bridge</h3>
             <p>WSL isolates its network from the Windows host, blocking UDP packet forwarding by default. Built a utility to automate the bridging — no manual configuration needed.</p>
-            <div style="margin-top: auto; padding-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-                <div class="blog-tags" style="justify-content: center;">
+            <div class="project-card-footer">
+                <div class="blog-tags blog-tags--center">
                     <span class="blog-tag">Python</span>
                     <span class="blog-tag">Networking</span>
                     <span class="blog-tag">WSL</span>
                 </div>
-                <a href="https://github.com/Astralborn/WindowsWslPortBridge" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                <a href="https://github.com/Astralborn/WindowsWslPortBridge" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
             </div>
         </div>
 
-        <div class="project-card fade-in" style="display: flex; flex-direction: column; animation-delay: 0.1s;">
+        <div class="project-card project-card--col project-card--delay-1 fade-in">
             <h3>🔌 API Tester</h3>
             <p>Desktop API testing tool with a PySide6 UI. Single or batch requests, auto-generated test payloads, built-in logging. Supports HTTP Digest auth and self-signed certs.</p>
-            <div style="margin-top: auto; padding-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-                <div class="blog-tags" style="justify-content: center;">
+            <div class="project-card-footer">
+                <div class="blog-tags blog-tags--center">
                     <span class="blog-tag">Python</span>
                     <span class="blog-tag">API Testing</span>
                     <span class="blog-tag">PySide6</span>
                 </div>
-                <a href="https://github.com/Astralborn/API-tester" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                <a href="https://github.com/Astralborn/API-tester" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
             </div>
         </div>
 
-        <div class="project-card fade-in" style="display: flex; flex-direction: column; animation-delay: 0.2s;">
+        <div class="project-card project-card--col project-card--delay-2 fade-in">
             <h3>🖥️ This Portfolio</h3>
             <p>Personal site built as a side project — terminal boot screen, scroll animations, zero dependencies. You're looking at it.</p>
-            <div style="margin-top: auto; padding-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-                <div class="blog-tags" style="justify-content: center;">
+            <div class="project-card-footer">
+                <div class="blog-tags blog-tags--center">
                     <span class="blog-tag">JavaScript</span>
                     <span class="blog-tag">CSS</span>
                     <span class="blog-tag">HTML</span>
                 </div>
-                <a href="https://github.com/astralborn/astralborn.github.io" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                <a href="https://github.com/astralborn/astralborn.github.io" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &rarr;</a>
             </div>
         </div>
     </div>
@@ -285,13 +239,13 @@
 <section id="contact">
     <h2>Get In Touch</h2>
     <div class="contact-container">
-        <div class="terminal-window fade-in" style="max-width: 780px; margin: 3rem auto;">
+        <div class="terminal-window contact-terminal fade-in">
             <div class="terminal-header">
                 <div class="terminal-dot dot-red"></div>
                 <div class="terminal-dot dot-yellow"></div>
                 <div class="terminal-dot dot-green"></div>
             </div>
-            <div class="terminal-text" style="line-height: 1.6;">
+            <div class="terminal-text contact-terminal-text">
 
                 <p><span class="prompt">$</span><span class="command"> whoami</span></p>
                 <p><span class="prompt">&gt;</span> <span class="output">Stanislav N. — open to work, collaborations, and interesting problems.</span></p>
@@ -301,8 +255,8 @@
                 <p><span class="prompt">$</span><span class="command"> reach-out --method=email</span></p>
                 <p>
                     <span class="prompt">&gt;</span>
-                    <a href="mailto:stas.nikolaevski@gmail.com" class="link copy-link" data-copy="stas.nikolaevski@gmail.com" style="font-size: 1.05rem;">stas.nikolaevski@gmail.com</a>
-                    <span class="copy-confirm" style="color: #00FF8C; font-size: 0.8rem; margin-left: 0.5rem; opacity: 0; transition: opacity 0.3s;">[COPIED]</span>
+                    <a href="mailto:stas.nikolaevski@gmail.com" class="link contact-link">stas.nikolaevski@gmail.com</a>
+                    <button class="copy-btn" data-copy="stas.nikolaevski@gmail.com">[copy]</button>
                 </p>
 
                 <br>
@@ -310,8 +264,8 @@
                 <p><span class="prompt">$</span><span class="command"> view-code --platform=github</span></p>
                 <p>
                     <span class="prompt">&gt;</span>
-                    <a href="https://github.com/astralborn" target="_blank" class="link copy-link" data-copy="github.com/astralborn" style="font-size: 1.05rem;">github.com/astralborn</a>
-                    <span class="copy-confirm" style="color: #00FF8C; font-size: 0.8rem; margin-left: 0.5rem; opacity: 0; transition: opacity 0.3s;">[COPIED]</span>
+                    <a href="https://github.com/astralborn" target="_blank" rel="noopener noreferrer" class="link contact-link">github.com/astralborn</a>
+                    <button class="copy-btn" data-copy="github.com/astralborn">[copy]</button>
                 </p>
 
                 <br>
@@ -319,33 +273,22 @@
                 <p><span class="prompt">$</span><span class="command"> connect --platform=linkedin</span></p>
                 <p>
                     <span class="prompt">&gt;</span>
-                    <a href="https://linkedin.com/in/stas-nikolaievskyi" target="_blank" class="link copy-link" data-copy="linkedin.com/in/stas-nikolaievskyi" style="font-size: 1.05rem;">linkedin.com/in/stas-nikolaievskyi</a>
-                    <span class="copy-confirm" style="color: #00FF8C; font-size: 0.8rem; margin-left: 0.5rem; opacity: 0; transition: opacity 0.3s;">[COPIED]</span>
+                    <a href="https://linkedin.com/in/stas-nikolaievskyi" target="_blank" rel="noopener noreferrer" class="link contact-link">linkedin.com/in/stas-nikolaievskyi</a>
+                    <button class="copy-btn" data-copy="linkedin.com/in/stas-nikolaievskyi">[copy]</button>
                 </p>
 
                 <br>
                 <p><span class="prompt">&gt;</span> <span class="output">all channels open. response time: &lt; 24h</span></p>
-                <p><span class="prompt">&gt;</span> <span style="display: inline-block; animation: cursor-blink 1s step-end infinite;">█</span></p>
+                <p><span class="prompt">&gt;</span> <span class="cursor">█</span></p>
 
             </div>
         </div>
     </div>
-
-    <script>
-        document.querySelectorAll('.copy-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navigator.clipboard.writeText(link.getAttribute('data-copy'));
-                const confirm = link.nextElementSibling;
-                confirm.style.opacity = '1';
-                setTimeout(() => confirm.style.opacity = '0', 1500);
-            });
-        });
-    </script>
 </section>
 
 <footer>
     <p>&copy; 2026 <span class="signature">astralborn</span>. All rights reserved.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built with vanilla JS and the audacity to not use React.</p>
+    <p class="footer-sub">Built with vanilla JS and the audacity to not use React.</p>
 </footer>
 
 <script src="src/js/main.js"></script>
