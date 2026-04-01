@@ -121,7 +121,6 @@ pytest -v
 | `test_contact.py` | Links, schemes, copy buttons, terminal command lines, clipboard | 25 |
 | `test_page_meta.py` | Title, OG/Twitter meta, lang, charset, footer, 404 page | 21 |
 
-> Mobile viewport tests are intentionally excluded — the suite covers desktop layout only.
 
 ---
 

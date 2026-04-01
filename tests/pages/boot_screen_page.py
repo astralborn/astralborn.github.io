@@ -26,8 +26,9 @@ class BootScreen:
     def dismiss_by_click(self) -> None:
         self.container.click()
 
-    def dismiss_by_key(self) -> None:
-        self._page.keyboard.press("Escape")
+    def dismiss_by_key(self, key: str = "Escape") -> None:
+        """Press any key to trigger the keydown dismiss handler. Defaults to Escape."""
+        self._page.keyboard.press(key)
 
     def wait_for_auto_dismiss(self, timeout: float = 8_000) -> None:
         """Wait for the boot screen to auto-dismiss (default timeout ≥ 6 s)."""

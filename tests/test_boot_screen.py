@@ -1,4 +1,5 @@
 """Tests — Boot screen."""
+import pytest
 from playwright.sync_api import expect
 
 from tests.pages.portfolio_page import PortfolioPage
@@ -39,9 +40,12 @@ class TestBootScreen:
         portfolio_local.boot_screen.dismiss_by_click()
         portfolio_local.boot_screen.wait_until_gone(timeout=2_000)
 
-    def test_boot_screen_dismisses_on_keypress(self, portfolio_local: PortfolioPage) -> None:
-        """Pressing Escape must dismiss the boot screen within 2 seconds."""
-        portfolio_local.boot_screen.dismiss_by_key()
+    @pytest.mark.parametrize("key", ["Escape", "Enter", "Space"])
+    def test_boot_screen_dismisses_on_keypress(
+        self, portfolio_local: PortfolioPage, key: str
+    ) -> None:
+        """Pressing any key (Escape, Enter, Space) must dismiss the boot screen within 2 seconds."""
+        portfolio_local.boot_screen.dismiss_by_key(key)
         portfolio_local.boot_screen.wait_until_gone(timeout=2_000)
 
     def test_boot_screen_auto_dismisses(self, portfolio_local: PortfolioPage) -> None:
