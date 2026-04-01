@@ -112,3 +112,16 @@ class TestProjectsSection:
         for card in portfolio_local_ready.projects.cards.all():
             href = portfolio_local_ready.projects.get_github_link(card)
             assert "github.com" in href.lower(), f"Expected github.com in href, got: {href}"
+
+    def test_first_github_link_click_opens_new_tab(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Clicking a 'View on GitHub' link must open a new browser tab."""
+        portfolio_local_ready.scroll_to_section("projects")
+        first_link = portfolio_local_ready.projects.cards.first.locator(".project-link")
+        with portfolio_local_ready._page.expect_popup() as popup_info:
+            first_link.click()
+        popup = popup_info.value
+        assert "github.com" in popup.url.lower()
+        popup.close()
+

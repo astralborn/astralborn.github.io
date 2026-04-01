@@ -169,3 +169,25 @@ class TestContactSection:
         btn = portfolio_local_ready.contact.copy_button_for(value)
         assert btn.get_attribute("data-copy") == value
 
+    def test_github_link_click_opens_new_tab(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Clicking the GitHub contact link must open github.com in a new tab."""
+        portfolio_local_ready.scroll_to_section("contact")
+        with portfolio_local_ready._page.expect_popup() as popup_info:
+            portfolio_local_ready.contact.github_link.click()
+        popup = popup_info.value
+        assert "github.com" in popup.url.lower()
+        popup.close()
+
+    def test_linkedin_link_click_opens_new_tab(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Clicking the LinkedIn contact link must open linkedin.com in a new tab."""
+        portfolio_local_ready.scroll_to_section("contact")
+        with portfolio_local_ready._page.expect_popup() as popup_info:
+            portfolio_local_ready.contact.linkedin_link.click()
+        popup = popup_info.value
+        assert "linkedin.com" in popup.url.lower()
+        popup.close()
+

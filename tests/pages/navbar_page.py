@@ -31,6 +31,12 @@ class NavBar:
     def click_cv(self) -> None:
         self.cv_link.click()
 
+    def click_nav_link_and_wait(self, label: str, section_id: str) -> None:
+        """Click a nav link and wait for the target section to enter the viewport."""
+        self.nav_link(label).click()
+        self._page.wait_for_timeout(600)
+        expect(self._page.locator(f"#{section_id}")).to_be_in_viewport()
+
     # --- Assertions ---
 
     def expect_logo_contains(self, text: str) -> None:

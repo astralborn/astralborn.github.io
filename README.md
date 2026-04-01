@@ -135,7 +135,7 @@ pytest -v
 
 ## Deployment
 
-Hosted on **GitHub Pages** from the `main` branch root. Push to `main` and the site updates automatically. The custom 404 page is picked up by GitHub Pages without any extra config.
+Hosted on **GitHub Pages** from the `main` branch root. The custom 404 page is picked up by GitHub Pages without any extra config.
 
 ---
 

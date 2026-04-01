@@ -114,3 +114,19 @@ class TestHeroSection:
         href = portfolio_local_ready.hero.contact_link.get_attribute("href") or ""
         assert href == "#contact"
 
+    def test_projects_link_click_scrolls_to_projects(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Clicking '[1] cd projects' must scroll #projects into the viewport."""
+        portfolio_local_ready.hero.projects_link.click()
+        portfolio_local_ready._page.wait_for_timeout(600)
+        expect(portfolio_local_ready._page.locator("#projects")).to_be_in_viewport()
+
+    def test_contact_link_click_scrolls_to_contact(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Clicking '[2] ./contact.sh' must scroll #contact into the viewport."""
+        portfolio_local_ready.hero.contact_link.click()
+        portfolio_local_ready._page.wait_for_timeout(600)
+        expect(portfolio_local_ready._page.locator("#contact")).to_be_in_viewport()
+

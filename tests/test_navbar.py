@@ -83,3 +83,23 @@ class TestNavBar:
         portfolio_local_ready.scroll_to_section(section)
         link = portfolio_local_ready.nav.nav_link(section.capitalize())
         expect(link).to_have_class(re.compile(r"nav-active"), timeout=3_000)
+
+    @pytest.mark.parametrize("label,section_id", [
+        ("About",    "about"),
+        ("Skills",   "skills"),
+        ("Projects", "projects"),
+        ("Contact",  "contact"),
+    ])
+    def test_nav_link_click_scrolls_to_section(
+        self, portfolio_local_ready: PortfolioPage, label: str, section_id: str
+    ) -> None:
+        """Clicking each nav link must scroll the matching section into the viewport."""
+        portfolio_local_ready.nav.click_nav_link_and_wait(label, section_id)
+
+    def test_home_nav_link_click_scrolls_to_top(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Clicking 'Home' after scrolling down must bring #home back into the viewport."""
+        portfolio_local_ready.scroll_to_section("contact")
+        portfolio_local_ready.nav.click_nav_link_and_wait("Home", "home")
+

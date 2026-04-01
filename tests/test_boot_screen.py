@@ -77,3 +77,13 @@ class TestBootScreen:
         """After dismissing the boot screen, the nav and hero section must be visible."""
         expect(portfolio_local_ready.nav.nav).to_be_visible()
         expect(portfolio_local_ready.hero.section).to_be_visible()
+
+    def test_click_dismiss_reveals_hero_links(
+        self, portfolio_local: PortfolioPage
+    ) -> None:
+        """After clicking to dismiss the boot screen, both hero terminal links must be clickable."""
+        portfolio_local.boot_screen.dismiss_by_click()
+        portfolio_local.boot_screen.wait_until_gone(timeout=2_000)
+        expect(portfolio_local._page.locator(".hero-terminal a[href='#projects']")).to_be_visible()
+        expect(portfolio_local._page.locator(".hero-terminal a[href='#contact']")).to_be_visible()
+
