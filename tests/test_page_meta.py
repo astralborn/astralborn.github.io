@@ -149,17 +149,92 @@ class TestFooter:
 class Test404Page:
     """Verify the custom 404 page is served correctly for unknown routes."""
 
-    def test_404_page_loads(self, page: Page) -> None:
-        """404.html must load and have a title containing '404'."""
+    # ── helpers ──────────────────────────────────────────────────────────────
+
+    @staticmethod
+    def _goto_404(page: Page) -> None:
         index_404 = pathlib.Path(__file__).parent.parent / "404.html"
         page.goto(index_404.as_uri())
+
+    # ── meta / structure ─────────────────────────────────────────────────────
+
+    def test_404_page_loads(self, page: Page) -> None:
+        """404.html must load and have a title containing '404'."""
+        self._goto_404(page)
         expect(page).to_have_title(re.compile(r"404", re.IGNORECASE))
 
     def test_404_page_has_go_home_link(self, page: Page) -> None:
         """404 page must contain a visible 'return to base' home link (.home-link)."""
-        index_404 = pathlib.Path(__file__).parent.parent / "404.html"
-        page.goto(index_404.as_uri())
+        self._goto_404(page)
         home_link = page.locator("a.home-link")
         expect(home_link).to_be_visible(timeout=5_000)
         expect(home_link).to_contain_text("return to base")
+
+    def test_404_error_code_displayed(self, page: Page) -> None:
+        """The large .error-code element must display the text '404'."""
+        self._goto_404(page)
+        error_code = page.locator(".error-code")
+        expect(error_code).to_be_visible()
+        expect(error_code).to_contain_text("404")
+
+    def test_404_terminal_block_is_visible(self, page: Page) -> None:
+        """The themed terminal block (.terminal) must be rendered on the page."""
+        self._goto_404(page)
+        expect(page.locator(".terminal")).to_be_visible()
+
+    def test_404_error_label_shown(self, page: Page) -> None:
+        """The .error-label must contain the exception hint text."""
+        self._goto_404(page)
+        expect(page.locator(".error-label")).to_contain_text("PathNotFoundException")
+
+    def test_404_lang_attribute_is_en(self, page: Page) -> None:
+        """The <html> element on the 404 page must carry lang='en'."""
+        self._goto_404(page)
+        lang = page.locator("html").get_attribute("lang") or ""
+        assert lang == "en"
+
+    # ── interactions ─────────────────────────────────────────────────────────
+
+    def test_404_home_link_href_points_to_root(self, page: Page) -> None:
+        """The home link href must target the site root ('/')."""
+        self._goto_404(page)
+        href = page.locator("a.home-link").get_attribute("href") or ""
+        assert href == "/", f"Expected href='/', got '{href}'"
+
+    def test_404_home_link_click_navigates_away(self, page: Page) -> None:
+        """Clicking the home link must navigate the browser away from the 404 page."""
+        self._goto_404(page)
+        url_before = page.url
+        with page.expect_navigation():
+            page.locator("a.home-link").click()
+        assert page.url != url_before, "URL should change after clicking the home link"
+
+    def test_404_home_link_is_keyboard_focusable(self, page: Page) -> None:
+        """The home link must be reachable via keyboard Tab."""
+        self._goto_404(page)
+        page.keyboard.press("Tab")
+        focused_tag = page.evaluate("document.activeElement.tagName").lower()
+        focused_class = page.evaluate("document.activeElement.className")
+        assert focused_tag == "a" and "home-link" in focused_class, (
+            f"Expected <a class='home-link'> to be focused, "
+            f"got <{focused_tag} class='{focused_class}'>"
+        )
+
+    def test_404_home_link_hover_changes_style(self, page: Page) -> None:
+        """Hovering the home link must apply a background (CSS hover transition)."""
+        self._goto_404(page)
+        link = page.locator("a.home-link")
+        link.hover()
+        bg_color = link.evaluate("el => getComputedStyle(el).backgroundColor")
+        # The hover rule sets background: #00FF8C — must be non-transparent
+        assert bg_color != "rgba(0, 0, 0, 0)", (
+            f"Expected a coloured background on hover, got '{bg_color}'"
+        )
+
+    def test_404_bad_path_script_runs(self, page: Page) -> None:
+        """The inline JS must inject the current pathname into #badpath."""
+        self._goto_404(page)
+        bad_path_text = page.locator("#badpath").inner_text()
+        # When opened as a file:// URI the pathname will not be empty
+        assert bad_path_text.strip() != "", "#badpath should be populated by the inline script"
 
