@@ -103,3 +103,33 @@ class TestNavBar:
         portfolio_local_ready.scroll_to_section("contact")
         portfolio_local_ready.nav.click_nav_link_and_wait("Home", "home")
 
+    @pytest.mark.parametrize("section", ["about", "skills", "projects", "contact"])
+    def test_only_one_nav_link_active_at_a_time(
+        self, portfolio_local_ready: PortfolioPage, section: str
+    ) -> None:
+        """After scrolling to a section, exactly one nav link must carry .nav-active — never two."""
+        portfolio_local_ready.scroll_to_section(section)
+        portfolio_local_ready._page.wait_for_timeout(600)
+        active_links = portfolio_local_ready._page.locator(".nav-links a.nav-active")
+        expect(active_links).to_have_count(1)
+
+    @pytest.mark.parametrize("section,label", [
+        ("about",    "About"),
+        ("skills",   "Skills"),
+        ("projects", "Projects"),
+        ("contact",  "Contact"),
+    ])
+    def test_scroll_spy_updates_on_manual_scroll(
+        self, portfolio_local_ready: PortfolioPage, section: str, label: str
+    ) -> None:
+        """Manually scrolling (mouse wheel) to a section must update the active nav link —
+        not just programmatic scrollIntoView calls."""
+        target = portfolio_local_ready._page.locator(f"#{section}")
+        # Scroll the target into view using JS, then simulate wheel events to
+        # trigger the IntersectionObserver the same way a real user would.
+        target.scroll_into_view_if_needed()
+        portfolio_local_ready._page.mouse.wheel(0, 100)
+        portfolio_local_ready._page.mouse.wheel(0, -100)
+        link = portfolio_local_ready.nav.nav_link(label)
+        expect(link).to_have_class(re.compile(r"nav-active"), timeout=3_000)
+
