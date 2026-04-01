@@ -37,7 +37,8 @@ Personal portfolio — terminal-inspired, cyberpunk aesthetic, zero dependencies
 .
 ├── index.html              # Single page
 ├── 404.html                # Custom GitHub Pages error page
-├── favicon.svg             # Terminal cursor favicon
+├── pytest.ini              # Pytest config — sets pythonpath and testpaths
+├── requirements-test.txt   # Test dependencies (playwright, pytest, pytest-playwright)
 └── src/
     ├── css/
     │   ├── main.css        # Base styles, layout, boot screen, components
@@ -50,7 +51,77 @@ Personal portfolio — terminal-inspired, cyberpunk aesthetic, zero dependencies
         └── images/
             ├── photo.png
             └── mockup.png
+└── tests/
+    ├── conftest.py                  # Shared fixtures (portfolio_local, portfolio_local_ready)
+    ├── test_boot_screen.py          # Boot screen overlay (13 tests)
+    ├── test_navbar.py               # Navigation bar & active-scroll (14 tests)
+    ├── test_hero.py                 # Hero section content & links (21 tests)
+    ├── test_about.py                # About section & code window (22 tests)
+    ├── test_skills.py               # Skills terminal & proficiency labels (29 tests)
+    ├── test_projects.py             # Projects grid & GitHub links (27 tests)
+    ├── test_contact.py              # Contact terminal, links & copy buttons (25 tests)
+    ├── test_page_meta.py            # <head> meta, footer & 404 page (21 tests)
+    └── pages/                       # Page Object Model
+        ├── portfolio_page.py        # Top-level facade
+        ├── boot_screen_page.py
+        ├── navbar_page.py
+        ├── hero_section_page.py
+        ├── about_section_page.py
+        ├── skills_section_page.py
+        ├── projects_section_page.py
+        └── contact_section_page.py
 ```
+
+---
+
+## Tests
+
+The project is covered by an end-to-end Playwright test suite written in Python.  
+Tests run against the local `index.html` — no live network required.
+
+### Stack
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+
+### Setup
+
+```bash
+pip install -r requirements-test.txt
+playwright install chromium
+```
+
+### Run
+
+```bash
+# All tests (headless, local file)
+pytest
+
+# Headed mode — watch the browser
+pytest --headed
+
+# Specific file
+pytest tests/test_navbar.py
+
+# Verbose output
+pytest -v
+```
+
+### What's covered
+
+| File | Area | Tests |
+|---|---|---|
+| `test_boot_screen.py` | Boot overlay: visibility, status lines, dismiss methods, auto-dismiss | 13 |
+| `test_navbar.py` | Logo, nav links, CV button, security attrs, active-scroll per section | 14 |
+| `test_hero.py` | Tag, subtitle, photo, terminal commands, cursor, link hrefs | 21 |
+| `test_about.py` | Heading, intro copy, stat items, code window content | 22 |
+| `test_skills.py` | 8 skill rows, 2 categories, proficiency labels, bar blocks | 29 |
+| `test_projects.py` | 3 cards, GitHub slugs, tag lists, descriptions, link text | 27 |
+| `test_contact.py` | Links, schemes, copy buttons, terminal command lines, clipboard | 25 |
+| `test_page_meta.py` | Title, OG/Twitter meta, lang, charset, footer, 404 page | 21 |
+
+> Mobile viewport tests are intentionally excluded — the suite covers desktop layout only.
 
 ---
 
