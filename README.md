@@ -53,14 +53,15 @@ Personal portfolio — terminal-inspired, cyberpunk aesthetic, zero dependencies
             └── mockup.png
 └── tests/
     ├── conftest.py                  # Shared fixtures (portfolio_local, portfolio_local_ready)
-    ├── test_boot_screen.py          # Boot screen overlay (13 tests)
-    ├── test_navbar.py               # Navigation bar & active-scroll (14 tests)
-    ├── test_hero.py                 # Hero section content & links (21 tests)
+    ├── test_boot_screen.py          # Boot screen overlay (15 tests)
+    ├── test_navbar.py               # Navigation bar & active-scroll (21 tests)
+    ├── test_hero.py                 # Hero section content & links (23 tests)
     ├── test_about.py                # About section & code window (22 tests)
     ├── test_skills.py               # Skills terminal & proficiency labels (29 tests)
-    ├── test_projects.py             # Projects grid & GitHub links (27 tests)
-    ├── test_contact.py              # Contact terminal, links & copy buttons (25 tests)
+    ├── test_projects.py             # Projects grid & GitHub links (28 tests)
+    ├── test_contact.py              # Contact terminal, links & copy buttons (27 tests)
     ├── test_page_meta.py            # <head> meta, footer & 404 page (21 tests)
+    ├── test_animations.py           # Scroll-reveal & IntersectionObserver (28 tests)
     └── pages/                       # Page Object Model
         ├── portfolio_page.py        # Top-level facade
         ├── boot_screen_page.py
@@ -112,14 +113,15 @@ pytest -v
 
 | File | Area | Tests |
 |---|---|---|
-| `test_boot_screen.py` | Boot overlay: visibility, status lines, dismiss methods, auto-dismiss | 13 |
-| `test_navbar.py` | Logo, nav links, CV button, security attrs, active-scroll per section | 14 |
-| `test_hero.py` | Tag, subtitle, photo, terminal commands, cursor, link hrefs | 21 |
+| `test_boot_screen.py` | Boot overlay: visibility, status lines, dismiss by click/key (Esc/Enter/Space), auto-dismiss | 15 |
+| `test_navbar.py` | Logo, nav links, CV button, security attrs, click-scroll, scroll-spy accuracy | 21 |
+| `test_hero.py` | Tag, subtitle, photo, terminal commands, cursor, link hrefs, click-scroll | 23 |
 | `test_about.py` | Heading, intro copy, stat items, code window content | 22 |
 | `test_skills.py` | 8 skill rows, 2 categories, proficiency labels, bar blocks | 29 |
-| `test_projects.py` | 3 cards, GitHub slugs, tag lists, descriptions, link text | 27 |
-| `test_contact.py` | Links, schemes, copy buttons, terminal command lines, clipboard | 25 |
+| `test_projects.py` | 3 cards, GitHub slugs, tag lists, descriptions, new-tab popup | 28 |
+| `test_contact.py` | Links, schemes, copy buttons, terminal lines, clipboard, new-tab popup | 27 |
 | `test_page_meta.py` | Title, OG/Twitter meta, lang, charset, footer, 404 page | 21 |
+| `test_animations.py` | .lazy-section class, .visible class, opacity=1, translateY=0 per section & fade-in element | 28 |
 
 
 ---
