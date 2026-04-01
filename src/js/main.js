@@ -76,8 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 const el = entry.target;
                 el.classList.add('visible');
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
+                // Let the CSS .lazy-section.visible / .fade-in transition handle
+                // opacity and transform — avoid inline styles that skip the transition
+                // and leave sub-pixel residuals when read mid-flight by tests.
+                if (el.classList.contains('fade-in')) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
                 revealObserver.unobserve(el);
             }
         });

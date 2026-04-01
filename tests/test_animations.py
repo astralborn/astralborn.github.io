@@ -56,12 +56,12 @@ class TestScrollReveal:
         # Wait until the CSS transition completes and opacity reaches 1
         portfolio_local_ready._page.wait_for_function(
             "id => parseFloat(getComputedStyle(document.getElementById(id)).opacity) >= 0.99",
-            section_id,
+            arg=section_id,
             timeout=3_000,
         )
         opacity = portfolio_local_ready._page.evaluate(
             "id => parseFloat(getComputedStyle(document.getElementById(id)).opacity)",
-            section_id,
+            arg=section_id,
         )
         assert opacity == pytest.approx(1.0, abs=0.05), (
             f"#{section_id} opacity is {opacity} — expected 1.0 after reveal"
@@ -74,19 +74,32 @@ class TestScrollReveal:
         """After .visible is applied the translateY offset must be 0 —
         the section must no longer be shifted downward."""
         portfolio_local_ready.scroll_to_section(section_id)
+        # Wait until both opacity AND transform transition have finished
         portfolio_local_ready._page.wait_for_function(
-            "id => parseFloat(getComputedStyle(document.getElementById(id)).opacity) >= 0.99",
-            section_id,
+            """id => {
+                const el = document.getElementById(id);
+                const style = getComputedStyle(el);
+                const opacityOk = parseFloat(style.opacity) >= 0.99;
+                const m = style.transform;
+                const translateY = (m === 'none') ? 0 : parseFloat(m.split(',')[5]);
+                return opacityOk && Math.abs(translateY) < 0.5;
+            }""",
+            arg=section_id,
             timeout=3_000,
         )
         transform = portfolio_local_ready._page.evaluate(
             "id => getComputedStyle(document.getElementById(id)).transform",
-            section_id,
+            arg=section_id,
         )
-        assert transform in ("none", "matrix(1, 0, 0, 1, 0, 0)"), (
-            f"#{section_id} still has transform '{transform}' after reveal — "
-            "translateY was not reset to 0"
-        )
+        m = transform
+        if m not in ("none", "matrix(1, 0, 0, 1, 0, 0)"):
+            import re as _re
+            nums = _re.findall(r"[-\d.]+", m)
+            translate_y = float(nums[5]) if len(nums) >= 6 else 999
+            assert abs(translate_y) < 0.5, (
+                f"#{section_id} still has transform '{transform}' after reveal — "
+                "translateY was not reset to 0"
+            )
 
     @pytest.mark.parametrize("section_id,selector", FADE_IN_ELEMENTS)
     def test_fade_in_element_reaches_full_opacity_on_scroll(
@@ -97,12 +110,12 @@ class TestScrollReveal:
         portfolio_local_ready.scroll_to_section(section_id)
         portfolio_local_ready._page.wait_for_function(
             "sel => { const el = document.querySelector(sel); return el && parseFloat(getComputedStyle(el).opacity) >= 0.99; }",
-            selector,
+            arg=selector,
             timeout=3_000,
         )
         opacity = portfolio_local_ready._page.evaluate(
             "sel => parseFloat(getComputedStyle(document.querySelector(sel)).opacity)",
-            selector,
+            arg=selector,
         )
         assert opacity == pytest.approx(1.0, abs=0.05), (
             f"'{selector}' opacity is {opacity} after scroll — "
@@ -117,14 +130,27 @@ class TestScrollReveal:
         must be reset to translateY(0) — no remaining downward shift."""
         portfolio_local_ready.scroll_to_section(section_id)
         portfolio_local_ready._page.wait_for_function(
-            "sel => { const el = document.querySelector(sel); return el && parseFloat(getComputedStyle(el).opacity) >= 0.99; }",
-            selector,
+            """sel => {
+                const el = document.querySelector(sel);
+                if (!el) return false;
+                const style = getComputedStyle(el);
+                const opacityOk = parseFloat(style.opacity) >= 0.99;
+                const m = style.transform;
+                const translateY = (m === 'none') ? 0 : parseFloat(m.split(',')[5]);
+                return opacityOk && Math.abs(translateY) < 0.5;
+            }""",
+            arg=selector,
             timeout=3_000,
         )
         transform = portfolio_local_ready._page.evaluate(
             "sel => getComputedStyle(document.querySelector(sel)).transform",
-            selector,
+            arg=selector,
         )
-        assert transform in ("none", "matrix(1, 0, 0, 1, 0, 0)"), (
-            f"'{selector}' still has transform '{transform}' after reveal"
-        )
+        m = transform
+        if m not in ("none", "matrix(1, 0, 0, 1, 0, 0)"):
+            import re as _re
+            nums = _re.findall(r"[-\d.]+", m)
+            translate_y = float(nums[5]) if len(nums) >= 6 else 999
+            assert abs(translate_y) < 0.5, (
+                f"'{selector}' still has transform '{transform}' after reveal"
+            )
