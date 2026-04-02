@@ -1,5 +1,6 @@
 """Tests — Navigation bar."""
 import re
+
 import pytest
 from playwright.sync_api import expect
 
@@ -85,10 +86,10 @@ class TestNavBar:
         expect(link).to_have_class(re.compile(r"nav-active"), timeout=3_000)
 
     @pytest.mark.parametrize("label,section_id", [
-        ("About",    "about"),
-        ("Skills",   "skills"),
+        ("About", "about"),
+        ("Skills", "skills"),
         ("Projects", "projects"),
-        ("Contact",  "contact"),
+        ("Contact", "contact"),
     ])
     def test_nav_link_click_scrolls_to_section(
         self, portfolio_local_ready: PortfolioPage, label: str, section_id: str
@@ -114,10 +115,10 @@ class TestNavBar:
         expect(active_links).to_have_count(1)
 
     @pytest.mark.parametrize("section,label", [
-        ("about",    "About"),
-        ("skills",   "Skills"),
+        ("about", "About"),
+        ("skills", "Skills"),
         ("projects", "Projects"),
-        ("contact",  "Contact"),
+        ("contact", "Contact"),
     ])
     def test_scroll_spy_updates_on_manual_scroll(
         self, portfolio_local_ready: PortfolioPage, section: str, label: str

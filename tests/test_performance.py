@@ -15,12 +15,12 @@ import pathlib
 import socket
 
 import pytest
-from playwright.sync_api import Page, BrowserContext
+from playwright.sync_api import Page
 
 # ── constants ────────────────────────────────────────────────────────────────
 
 LOAD_THRESHOLD_MS: int = 3_000
-LIVE_HOST = "astralborn.github.io"
+LIVE_HOST: str = "astralborn.github.io"
 
 _INDEX = pathlib.Path(__file__).parent.parent / "index.html"
 LOCAL_FILE_URL = _INDEX.as_uri()

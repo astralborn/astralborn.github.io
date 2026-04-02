@@ -4,7 +4,7 @@ from playwright.sync_api import expect
 
 from tests.pages.portfolio_page import PortfolioPage
 
-EXPECTED_PROJECTS = [
+EXPECTED_PROJECTS: list[dict[str, object]] = [
     {
         "title": "WSL Port Bridge",
         "tags": ["Python", "Networking", "WSL"],

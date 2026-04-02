@@ -9,7 +9,7 @@ from tests.pages.skills_section_page import SkillsSection
 from tests.pages.projects_section_page import ProjectsSection
 from tests.pages.contact_section_page import ContactSection
 
-BASE_URL = "https://astralborn.github.io"
+BASE_URL: str = "https://astralborn.github.io"
 
 
 class PortfolioPage:

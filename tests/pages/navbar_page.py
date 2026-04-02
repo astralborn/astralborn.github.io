@@ -5,7 +5,7 @@ from playwright.sync_api import Page, Locator, expect
 class NavBar:
     """Represents the sticky navigation bar."""
 
-    NAV_ITEMS = ("Home", "About", "Skills", "Projects", "Contact")
+    NAV_ITEMS: tuple[str, ...] = ("Home", "About", "Skills", "Projects", "Contact")
 
     def __init__(self, page: Page) -> None:
         self._page = page

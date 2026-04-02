@@ -14,6 +14,7 @@ Playwright CLI options used below:
   --slowmo 500    slow down by 500 ms
 """
 import pathlib
+
 import pytest
 from playwright.sync_api import Page
 

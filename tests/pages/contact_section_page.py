@@ -60,9 +60,9 @@ class ContactSection:
             expect(link).to_have_attribute("target", "_blank")
             expect(link).to_have_attribute("rel", "noopener noreferrer")
 
-    def expect_copy_button_changes_text_after_click(self, page: Page, value: str) -> None:
-        """
-        Click a copy button and verify it changes to [✓] then reverts.
+    def expect_copy_button_changes_text_after_click(self, value: str) -> None:
+        """Click a copy button and verify it changes to [✓] then reverts.
+
         Requires a real clipboard permission grant (headed mode / cdp).
         """
         btn = self.copy_button_for(value)

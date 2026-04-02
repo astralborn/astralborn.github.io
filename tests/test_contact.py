@@ -1,5 +1,6 @@
 """Tests — Contact section."""
 import pathlib
+
 import pytest
 from playwright.sync_api import Page, expect
 

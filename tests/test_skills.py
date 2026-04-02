@@ -4,23 +4,31 @@ from playwright.sync_api import expect
 
 from tests.pages.portfolio_page import PortfolioPage
 
-EXPECTED_SKILLS = ["Python", "Pytest", "Playwright", "JavaScript",
-                   "Packet analysis", "Jenkins", "Git", "Linux"]
+EXPECTED_SKILLS: list[str] = [
+    "Python",
+    "Pytest",
+    "Playwright",
+    "JavaScript",
+    "Packet analysis",
+    "Jenkins",
+    "Git",
+    "Linux",
+]
 
-EXPECTED_CATEGORIES = ["# Automation", "# Domain & Tools"]
+EXPECTED_CATEGORIES: list[str] = ["# Automation", "# Domain & Tools"]
 
-EXPECTED_LABELS = {"proficient", "solid", "basic"}
+EXPECTED_LABELS: set[str] = {"proficient", "solid", "basic"}
 
-# Expected proficiency label per skill, directly from the HTML
-SKILL_PROFICIENCY = {
-    "Python":           "proficient",
-    "Pytest":           "proficient",
-    "Playwright":       "solid",
-    "JavaScript":       "basic",
-    "Packet analysis":  "proficient",
-    "Jenkins":          "solid",
-    "Git":              "solid",
-    "Linux":            "solid",
+# Expected proficiency label per skill, directly from the HTML.
+SKILL_PROFICIENCY: dict[str, str] = {
+    "Python": "proficient",
+    "Pytest": "proficient",
+    "Playwright": "solid",
+    "JavaScript": "basic",
+    "Packet analysis": "proficient",
+    "Jenkins": "solid",
+    "Git": "solid",
+    "Linux": "solid",
 }
 
 
