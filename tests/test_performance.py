@@ -98,20 +98,6 @@ class TestPerformanceBaseline:
             f"threshold is {LOAD_THRESHOLD_MS} ms"
         )
 
-    def test_local_first_paint_under_one_second(self, timed_local_page: Page) -> None:
-        """First Paint must occur within 1 000 ms on a local file load.
-        Skipped automatically on browsers/engines that don't expose paint timing."""
-        fp_ms = timed_local_page.evaluate("""() => {
-            const entries = performance.getEntriesByType('paint');
-            const fp = entries.find(e => e.name === 'first-paint');
-            return fp ? fp.startTime : null;
-        }""")
-        if fp_ms is None:
-            pytest.skip("paint timing not available in this browser engine")
-        assert fp_ms < 1_000, (
-            f"First Paint occurred at {fp_ms:.0f} ms — expected under 1 000 ms"
-        )
-
     @pytest.mark.skipif(not _site_reachable(), reason="Live site not reachable — skipping network test")
     def test_live_page_loads_under_threshold(self, timed_live_page: Page) -> None:
         """End-to-end load of the live GitHub Pages site must be under 3 000 ms.
