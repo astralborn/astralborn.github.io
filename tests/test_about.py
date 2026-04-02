@@ -42,7 +42,7 @@ class TestAboutSection:
         """Code window title tab must display 'about.py'."""
         portfolio_local_ready.scroll_to_section("about")
         title = portfolio_local_ready.about.get_code_title()
-        assert "about.py" in title.lower()
+        assert "about.py" in title
 
     def test_code_window_contains_engineer_class(
         self, portfolio_local_ready: PortfolioPage
@@ -90,20 +90,17 @@ class TestAboutSection:
     def test_stat_label_years_experience(self, portfolio_local_ready: PortfolioPage) -> None:
         """'Years Experience' stat item must display the '3+' value."""
         portfolio_local_ready.scroll_to_section("about")
-        stat = portfolio_local_ready._page.locator(".stat-item", has_text="Years Experience")
-        expect(stat).to_contain_text("3+")
+        portfolio_local_ready.about.expect_stat_value("Years Experience", "3+")
 
     def test_stat_label_primary_weapon(self, portfolio_local_ready: PortfolioPage) -> None:
         """'Primary Weapon' stat item must be visible."""
         portfolio_local_ready.scroll_to_section("about")
-        stat = portfolio_local_ready._page.locator(".stat-item", has_text="Primary Weapon")
-        expect(stat).to_be_visible()
+        portfolio_local_ready.about.expect_stat_visible("Primary Weapon")
 
     def test_stat_label_tests_automated(self, portfolio_local_ready: PortfolioPage) -> None:
         """'Tests Automated' stat item must be visible."""
         portfolio_local_ready.scroll_to_section("about")
-        stat = portfolio_local_ready._page.locator(".stat-item", has_text="Tests Automated")
-        expect(stat).to_be_visible()
+        portfolio_local_ready.about.expect_stat_visible("Tests Automated")
 
     def test_about_intro_mentions_ci_cd(self, portfolio_local_ready: PortfolioPage) -> None:
         """Intro paragraph must mention CI/CD as a domain of work."""
@@ -143,4 +140,39 @@ class TestAboutSection:
         """Code content must include the author's first name 'Stanislav'."""
         portfolio_local_ready.scroll_to_section("about")
         expect(portfolio_local_ready.about.code_content).to_contain_text("Stanislav")
+
+    # --- Negative / edge-case tests ---
+
+    def test_stat_nonexistent_label_not_present(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """A completely made-up stat label must not appear in the section."""
+        portfolio_local_ready.scroll_to_section("about")
+        portfolio_local_ready.about.expect_stat_not_visible("Nonexistent Stat")
+
+    def test_stat_count_is_not_zero(self, portfolio_local_ready: PortfolioPage) -> None:
+        """Stat grid must not be empty — at least one stat item must exist."""
+        portfolio_local_ready.scroll_to_section("about")
+        count = portfolio_local_ready.about.get_stat_count()
+        assert count > 0, "Expected at least one .stat-item but found none"
+
+    def test_about_heading_is_not_empty(self, portfolio_local_ready: PortfolioPage) -> None:
+        """The #about heading must not be an empty string."""
+        portfolio_local_ready.scroll_to_section("about")
+        heading_text = portfolio_local_ready.about.heading.inner_text()
+        assert heading_text.strip() != "", "About heading must not be empty"
+
+    def test_code_title_is_not_empty(self, portfolio_local_ready: PortfolioPage) -> None:
+        """Code window title tab must not be an empty string."""
+        portfolio_local_ready.scroll_to_section("about")
+        title = portfolio_local_ready.about.get_code_title()
+        assert title.strip() != "", "Code window title must not be empty"
+
+    def test_intro_does_not_contain_placeholder_text(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Intro paragraph must not contain 'Lorem ipsum' placeholder text."""
+        portfolio_local_ready.scroll_to_section("about")
+        intro = portfolio_local_ready.about.get_intro_text()
+        assert "Lorem ipsum" not in intro, "Intro must not contain placeholder text"
 

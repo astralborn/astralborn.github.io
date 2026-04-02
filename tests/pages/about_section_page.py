@@ -40,3 +40,18 @@ class AboutSection:
     def expect_stat_count(self, count: int) -> None:
         expect(self.stats).to_have_count(count)
 
+    def expect_stat_visible(self, label: str) -> None:
+        """Assert that a .stat-item containing *label* text is visible."""
+        stat = self._page.locator(".stat-item", has_text=label)
+        expect(stat).to_be_visible()
+
+    def expect_stat_value(self, label: str, value: str) -> None:
+        """Assert that a .stat-item with *label* also contains *value*."""
+        stat = self._page.locator(".stat-item", has_text=label)
+        expect(stat).to_contain_text(value)
+
+    def expect_stat_not_visible(self, label: str) -> None:
+        """Assert that a .stat-item with *label* does NOT exist in the DOM."""
+        stat = self._page.locator(".stat-item", has_text=label)
+        expect(stat).to_have_count(0)
+
