@@ -62,6 +62,7 @@ Personal portfolio — terminal-inspired, cyberpunk aesthetic, zero dependencies
     ├── test_contact.py              # Contact terminal, links & copy buttons (27 tests)
     ├── test_page_meta.py            # <head> meta, footer & 404 page (21 tests)
     ├── test_animations.py           # Scroll-reveal & IntersectionObserver (28 tests)
+    ├── test_performance.py          # Navigation Timing API — load & DCL thresholds (3 tests)
     └── pages/                       # Page Object Model
         ├── portfolio_page.py        # Top-level facade
         ├── boot_screen_page.py
@@ -121,7 +122,8 @@ pytest -v
 | `test_projects.py` | 3 cards, GitHub slugs, tag lists, descriptions, new-tab popup | 28 |
 | `test_contact.py` | Links, schemes, copy buttons, terminal lines, clipboard, new-tab popup | 27 |
 | `test_page_meta.py` | Title, OG/Twitter meta, lang, charset, footer, 404 page | 21 |
-| `test_animations.py` | .lazy-section class, .visible class, opacity=1, translateY=0 per section & fade-in element | 28 |
+| `test_animations.py` | Scroll-reveal & IntersectionObserver (28 tests) per section & fade-in element | 28 |
+| `test_performance.py` | Navigation Timing API — local load, DOMContentLoaded, live site (skipped offline) | 3 |
 
 
 ---
