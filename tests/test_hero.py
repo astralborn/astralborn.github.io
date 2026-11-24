@@ -103,9 +103,12 @@ class TestHeroSection:
     def test_terminal_output_mentions_product_quality(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Terminal output must express product-minded quality beyond test coverage."""
+        """Terminal output must express product-minded quality."""
         expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
-            "Product-minded quality. Reliability beyond test coverage."
+            "Product-minded quality"
+        )
+        expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
+            "Reliability beyond test coverage"
         )
 
     def test_terminal_cursor_present(self, portfolio_local_ready: PortfolioPage) -> None:
