@@ -485,9 +485,4 @@ footer .signature {
 
     .code-content  { font-size: 0.8rem; }
     .terminal-window { max-width: 100%; }
-
-    #skills {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
 }

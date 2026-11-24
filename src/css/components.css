@@ -143,67 +143,6 @@
     font-size: 1.2rem;
 }
 
-/* --- Skills section --- */
-.skills-terminal {
-    max-width: 100%;
-    margin-top: 2rem;
-}
-
-.skills-terminal-text {
-    line-height: 2;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-}
-
-.skills-heading {
-    margin-bottom: 1rem;
-}
-
-.skills-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 4rem;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.skills-cols--bottom {
-    margin-top: 1.5rem;
-}
-
-.skill-cat-heading {
-    color: #00D9FF;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.skill-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.3rem;
-}
-
-.skill-name-col {
-    min-width: 140px;
-}
-
-
-.skill-bar-advanced   { color: #00FF8C; letter-spacing: 3px; }
-.skill-bar-proficient { color: #00cc88; letter-spacing: 3px; }
-.skill-bar-solid      { color: #00a86b; letter-spacing: 3px; }
-.skill-bar-basic      { color: #557a55; letter-spacing: 3px; }
-
-.skill-label {
-    font-size: 0.85rem;
-    margin-left: 0.5rem;
-}
-
-.skill-label--advanced   { color: #00FF8C; }
-.skill-label--proficient { color: #00cc88; }
-.skill-label--solid      { color: #00a86b; }
-.skill-label--basic      { color: #557a55; }
-
 /* --- Project cards --- */
 .project-card--col {
     display: flex;
@@ -300,15 +239,6 @@
 
     .about-content--custom {
         grid-template-columns: 1fr;
-    }
-
-    .skills-cols {
-        grid-template-columns: 1fr;
-        gap: 1.5rem 0;
-    }
-
-    .skill-name-col {
-        min-width: 100px;
     }
 
     .nav-links a::after {

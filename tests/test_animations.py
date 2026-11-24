@@ -16,12 +16,11 @@ from tests.pages.portfolio_page import PortfolioPage
 # ── constants ────────────────────────────────────────────────────────────────
 
 # All page sections that receive .lazy-section + .visible via JS.
-SECTIONS: list[str] = ["home", "about", "skills", "projects", "contact"]
+SECTIONS: list[str] = ["home", "about", "projects", "contact"]
 
 # Key .fade-in elements — (section_to_scroll_to, CSS selector).
 FADE_IN_ELEMENTS: list[tuple[str, str]] = [
     ("about", "#about .about-content"),
-    ("skills", ".skills-terminal"),
     ("projects", ".project-card"),
     ("contact", ".contact-terminal"),
 ]

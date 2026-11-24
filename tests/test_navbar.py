@@ -15,7 +15,7 @@ class TestNavBar:
         portfolio_local_ready.nav.expect_logo_contains("astralborn")
 
     def test_all_nav_links_present(self, portfolio_local_ready: PortfolioPage) -> None:
-        """All 5 section links (Home, About, Skills, Projects, Contact) must be visible."""
+        """All 4 section links (Home, About, Projects, Contact) must be visible."""
         portfolio_local_ready.nav.expect_all_nav_links_visible()
 
     def test_cv_link_is_present(self, portfolio_local_ready: PortfolioPage) -> None:
@@ -35,7 +35,7 @@ class TestNavBar:
         """Hamburger toggle element (.hamburger) must be present in the DOM."""
         expect(portfolio_local_ready.nav.hamburger).to_be_attached()
 
-    @pytest.mark.parametrize("label", ["Home", "About", "Skills", "Projects", "Contact"])
+    @pytest.mark.parametrize("label", ["Home", "About", "Projects", "Contact"])
     def test_nav_link_has_correct_anchor(
         self, portfolio_local_ready: PortfolioPage, label: str
     ) -> None:
@@ -65,7 +65,7 @@ class TestNavBar:
         expect(portfolio_local_ready.nav.nav).to_be_attached()
 
     def test_five_nav_links_present(self, portfolio_local_ready: PortfolioPage) -> None:
-        """#navLinks must contain at least 5 anchor elements (5 sections + 1 CV button)."""
+        """#navLinks must contain at least 5 links (4 sections + 1 CV button)."""
         links = portfolio_local_ready.nav.nav_links_container.get_by_role("link")
         count = links.count()
         assert count >= 5, f"Expected at least 5 nav links, got {count}"
@@ -76,7 +76,7 @@ class TestNavBar:
             "rel", re.compile(r"noopener")
         )
 
-    @pytest.mark.parametrize("section", ["about", "skills", "projects", "contact"])
+    @pytest.mark.parametrize("section", ["about", "projects", "contact"])
     def test_nav_active_updates_per_section(
         self, portfolio_local_ready: PortfolioPage, section: str
     ) -> None:
@@ -87,7 +87,6 @@ class TestNavBar:
 
     @pytest.mark.parametrize("label,section_id", [
         ("About", "about"),
-        ("Skills", "skills"),
         ("Projects", "projects"),
         ("Contact", "contact"),
     ])
@@ -104,7 +103,7 @@ class TestNavBar:
         portfolio_local_ready.scroll_to_section("contact")
         portfolio_local_ready.nav.click_nav_link_and_wait("Home", "home")
 
-    @pytest.mark.parametrize("section", ["about", "skills", "projects", "contact"])
+    @pytest.mark.parametrize("section", ["about", "projects", "contact"])
     def test_only_one_nav_link_active_at_a_time(
         self, portfolio_local_ready: PortfolioPage, section: str
     ) -> None:
@@ -116,7 +115,6 @@ class TestNavBar:
 
     @pytest.mark.parametrize("section,label", [
         ("about", "About"),
-        ("skills", "Skills"),
         ("projects", "Projects"),
         ("contact", "Contact"),
     ])
@@ -133,4 +131,3 @@ class TestNavBar:
         portfolio_local_ready._page.mouse.wheel(0, -100)
         link = portfolio_local_ready.nav.nav_link(label)
         expect(link).to_have_class(re.compile(r"nav-active"), timeout=3_000)
-

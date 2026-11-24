@@ -4,7 +4,6 @@ from playwright.sync_api import Page, Locator, expect
 from tests.pages.navbar_page import NavBar
 from tests.pages.hero_section_page import HeroSection
 from tests.pages.about_section_page import AboutSection
-from tests.pages.skills_section_page import SkillsSection
 from tests.pages.projects_section_page import ProjectsSection
 from tests.pages.contact_section_page import ContactSection
 
@@ -27,7 +26,6 @@ class PortfolioPage:
         self.nav = NavBar(page)
         self.hero = HeroSection(page)
         self.about = AboutSection(page)
-        self.skills = SkillsSection(page)
         self.projects = ProjectsSection(page)
         self.contact = ContactSection(page)
         self.footer: Locator = page.locator("footer")
@@ -66,4 +64,3 @@ class PortfolioPage:
 
     def expect_footer_visible(self) -> None:
         expect(self.footer).to_be_visible()
-
