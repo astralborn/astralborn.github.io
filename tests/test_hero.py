@@ -97,7 +97,7 @@ class TestHeroSection:
     ) -> None:
         """Terminal output must identify embedded and distributed storage experience."""
         expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
-            "embedded and distributed storage"
+            "embedded systems and distributed storage"
         )
 
     def test_terminal_output_mentions_product_quality(
@@ -105,15 +105,15 @@ class TestHeroSection:
     ) -> None:
         """Terminal output must express a product-minded quality perspective."""
         expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
-            "Product quality through the user's eyes"
+            "Product quality beyond test coverage"
         )
 
-    def test_terminal_output_mentions_user_facing_risks(
+    def test_terminal_output_mentions_release_risks(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Terminal output must focus on catching risks that matter to users."""
+        """Terminal output must highlight catching risks before release."""
         expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
-            "Catch the risks that matter before users do"
+            "Catch risks before release"
         )
 
     def test_terminal_cursor_present(self, portfolio_local_ready: PortfolioPage) -> None:
