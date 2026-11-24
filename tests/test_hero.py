@@ -110,6 +110,9 @@ class TestHeroSection:
         expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
             "Reliability beyond test coverage"
         )
+        expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
+            "Shift-left quality through collaboration"
+        )
 
     def test_terminal_cursor_present(self, portfolio_local_ready: PortfolioPage) -> None:
         """Blinking cursor element (.cursor) must be present in the hero terminal."""
