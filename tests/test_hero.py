@@ -53,7 +53,7 @@ class TestHeroSection:
     def test_subtitle_exact_text(self, portfolio_local_ready: PortfolioPage) -> None:
         """Subtitle must match the exact tagline copy."""
         expect(portfolio_local_ready.hero.subtitle).to_have_text(
-            "Automation author. Manual work arsonist."
+            "Automation author. Repetition arsonist."
         )
 
     def test_terminal_has_three_dot_decorators(self, portfolio_local_ready: PortfolioPage) -> None:
@@ -129,4 +129,3 @@ class TestHeroSection:
         portfolio_local_ready.hero.contact_link.click()
         portfolio_local_ready._page.wait_for_timeout(600)
         expect(portfolio_local_ready._page.locator("#contact")).to_be_in_viewport()
-
