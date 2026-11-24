@@ -111,7 +111,7 @@ class TestHeroSection:
             "Reliability beyond test coverage"
         )
         expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
-            "Shift-left quality through collaboration"
+            "Shift-left through teamwork"
         )
 
     def test_terminal_cursor_present(self, portfolio_local_ready: PortfolioPage) -> None:
