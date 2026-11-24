@@ -26,6 +26,13 @@ class TestAboutSection:
         portfolio_local_ready.scroll_to_section("about")
         portfolio_local_ready.about.expect_intro_contains("Prague")
 
+    def test_about_intro_has_two_paragraphs(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Intro separates the personal introduction from the work approach."""
+        portfolio_local_ready.scroll_to_section("about")
+        expect(portfolio_local_ready.about.intro_text.locator("p")).to_have_count(2)
+
     def test_about_has_three_stat_items(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
@@ -105,10 +112,10 @@ class TestAboutSection:
     def test_about_intro_mentions_embedded_and_distributed_systems(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Intro paragraph must mention embedded devices and distributed systems."""
+        """Intro paragraph must mention embedded and distributed systems."""
         portfolio_local_ready.scroll_to_section("about")
         expect(portfolio_local_ready.about.intro_text).to_contain_text(
-            "embedded devices and distributed systems"
+            "embedded and distributed systems"
         )
 
     def test_about_intro_mentions_early_team_collaboration(
@@ -117,7 +124,7 @@ class TestAboutSection:
         """Intro paragraph must describe collaboration and building quality in early."""
         portfolio_local_ready.scroll_to_section("about")
         expect(portfolio_local_ready.about.intro_text).to_contain_text(
-            "I partner with teams to surface the risks that matter and build quality in from the start."
+            "I partner with teams to spot risks early and build quality in from the start."
         )
 
     def test_about_section_is_visible(self, portfolio_local_ready: PortfolioPage) -> None:
@@ -133,10 +140,10 @@ class TestAboutSection:
     def test_about_intro_mentions_product_behavior(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Intro paragraph must express interest in how products behave and fail."""
+        """Intro paragraph must express interest in how systems behave and fail."""
         portfolio_local_ready.scroll_to_section("about")
         expect(portfolio_local_ready.about.intro_text).to_contain_text(
-            "work—and fail—as part of real products"
+            "work—and fail"
         )
 
     def test_code_window_heading_is_visible(self, portfolio_local_ready: PortfolioPage) -> None:

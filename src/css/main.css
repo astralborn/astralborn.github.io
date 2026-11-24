@@ -265,6 +265,10 @@ h2::after {
     color: #fff !important;
 }
 
+.about-intro p {
+    color: #fff;
+}
+
 .about-text .highlight {
     color: #00FF8C;
     font-weight: bold;
