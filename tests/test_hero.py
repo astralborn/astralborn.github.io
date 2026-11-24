@@ -92,13 +92,29 @@ class TestHeroSection:
         """Tag line must match the exact copy '// QA automation engineer'."""
         expect(portfolio_local_ready.hero.tag).to_have_text("// QA automation engineer")
 
-    def test_terminal_output_mentions_python(self, portfolio_local_ready: PortfolioPage) -> None:
-        """Terminal output must mention Python as part of the tech stack."""
-        expect(portfolio_local_ready.hero.terminal_window).to_contain_text("Python")
+    def test_terminal_output_mentions_distributed_storage(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Terminal output must identify embedded and distributed storage experience."""
+        expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
+            "embedded and distributed storage"
+        )
 
-    def test_terminal_output_mentions_embedded(self, portfolio_local_ready: PortfolioPage) -> None:
-        """Terminal output must mention 'Embedded Systems' as a domain of expertise."""
-        expect(portfolio_local_ready.hero.terminal_window).to_contain_text("Embedded Systems")
+    def test_terminal_output_mentions_product_quality(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Terminal output must express a product-minded quality perspective."""
+        expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
+            "Product quality through the user's eyes"
+        )
+
+    def test_terminal_output_mentions_user_facing_risks(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Terminal output must focus on catching risks that matter to users."""
+        expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
+            "Catch the risks that matter before users do"
+        )
 
     def test_terminal_cursor_present(self, portfolio_local_ready: PortfolioPage) -> None:
         """Blinking cursor element (.cursor) must be present in the hero terminal."""
