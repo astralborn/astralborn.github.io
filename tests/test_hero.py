@@ -92,28 +92,20 @@ class TestHeroSection:
         """Tag line must match the exact copy '// QA automation engineer'."""
         expect(portfolio_local_ready.hero.tag).to_have_text("// QA automation engineer")
 
-    def test_terminal_output_mentions_distributed_storage(
+    def test_terminal_output_mentions_distributed_systems(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Terminal output must identify embedded and distributed storage experience."""
+        """Terminal output must identify embedded and distributed systems experience."""
         expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
-            "embedded systems and distributed storage"
+            "embedded and distributed systems"
         )
 
     def test_terminal_output_mentions_product_quality(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Terminal output must express a product-minded quality perspective."""
+        """Terminal output must express product-minded quality beyond test coverage."""
         expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
-            "Product quality beyond test coverage"
-        )
-
-    def test_terminal_output_mentions_release_risks(
-        self, portfolio_local_ready: PortfolioPage
-    ) -> None:
-        """Terminal output must highlight catching risks before release."""
-        expect(portfolio_local_ready.hero.terminal_window).to_contain_text(
-            "Catch risks before release"
+            "Product-minded quality. Reliability beyond test coverage."
         )
 
     def test_terminal_cursor_present(self, portfolio_local_ready: PortfolioPage) -> None:
