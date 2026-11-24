@@ -102,10 +102,23 @@ class TestAboutSection:
         portfolio_local_ready.scroll_to_section("about")
         portfolio_local_ready.about.expect_stat_visible("Tests Automated")
 
-    def test_about_intro_mentions_ci_cd(self, portfolio_local_ready: PortfolioPage) -> None:
-        """Intro paragraph must mention CI/CD as a domain of work."""
+    def test_about_intro_mentions_embedded_and_distributed_systems(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Intro paragraph must mention embedded devices and distributed systems."""
         portfolio_local_ready.scroll_to_section("about")
-        expect(portfolio_local_ready.about.intro_text).to_contain_text("CI/CD")
+        expect(portfolio_local_ready.about.intro_text).to_contain_text(
+            "embedded devices and distributed systems"
+        )
+
+    def test_about_intro_mentions_early_team_collaboration(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Intro paragraph must describe collaboration and building quality in early."""
+        portfolio_local_ready.scroll_to_section("about")
+        expect(portfolio_local_ready.about.intro_text).to_contain_text(
+            "I partner with teams to surface the risks that matter and build quality in from the start."
+        )
 
     def test_about_section_is_visible(self, portfolio_local_ready: PortfolioPage) -> None:
         """The #about section element must be visible after scrolling into view."""
@@ -117,10 +130,14 @@ class TestAboutSection:
         portfolio_local_ready.scroll_to_section("about")
         expect(portfolio_local_ready.about.heading).to_have_text("About Me")
 
-    def test_about_intro_mentions_python(self, portfolio_local_ready: PortfolioPage) -> None:
-        """Intro paragraph must mention Python as the primary language."""
+    def test_about_intro_mentions_product_behavior(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Intro paragraph must express interest in how products behave and fail."""
         portfolio_local_ready.scroll_to_section("about")
-        expect(portfolio_local_ready.about.intro_text).to_contain_text("Python")
+        expect(portfolio_local_ready.about.intro_text).to_contain_text(
+            "work—and fail—as part of real products"
+        )
 
     def test_code_window_heading_is_visible(self, portfolio_local_ready: PortfolioPage) -> None:
         """Code window title tab (.code-title) must be visible."""
@@ -175,4 +192,3 @@ class TestAboutSection:
         portfolio_local_ready.scroll_to_section("about")
         intro = portfolio_local_ready.about.get_intro_text()
         assert "Lorem ipsum" not in intro, "Intro must not contain placeholder text"
-
