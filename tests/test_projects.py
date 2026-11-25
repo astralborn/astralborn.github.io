@@ -76,14 +76,18 @@ class TestProjectsSection:
         portfolio_local_ready.projects.expect_github_links_open_new_tab()
 
     @pytest.mark.parametrize("project", EXPECTED_PROJECTS, ids=[p["title"] for p in EXPECTED_PROJECTS])
-    def test_project_card_has_description(
+    def test_project_card_has_bullet_highlights(
         self, portfolio_local_ready: PortfolioPage, project: dict
     ) -> None:
-        """Each project card must include a non-empty description paragraph."""
+        """Each project card must show non-empty bullet-point highlights."""
         portfolio_local_ready.scroll_to_section("projects")
         card = portfolio_local_ready.projects.card_by_title(project["title"])
-        desc = card.locator("p").first.inner_text()
-        assert desc.strip() != "", f"Card '{project['title']}' has empty description"
+        highlights = card.locator(".project-highlights li")
+        expect(highlights).to_have_count(2)
+        for highlight in highlights.all():
+            assert highlight.inner_text().strip(), (
+                f"Card '{project['title']}' has an empty highlight"
+            )
 
     @pytest.mark.parametrize("project", EXPECTED_PROJECTS, ids=[p["title"] for p in EXPECTED_PROJECTS])
     def test_project_link_text_says_view_on_github(
@@ -124,4 +128,3 @@ class TestProjectsSection:
         popup = popup_info.value
         assert "github.com" in popup.url.lower()
         popup.close()
-

@@ -36,7 +36,7 @@ class TestAboutSection:
     def test_about_has_three_stat_items(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Stat grid must contain exactly 3 items (Years Experience, Primary Weapon, Tests Automated)."""
+        """Stat grid must contain years of experience and two durable areas of focus."""
         portfolio_local_ready.scroll_to_section("about")
         portfolio_local_ready.about.expect_stat_count(3)
 
@@ -54,37 +54,29 @@ class TestAboutSection:
     def test_code_window_contains_engineer_class(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Code content must define the 'Engineer' class."""
+        """Code content must define the AQAEngineer class."""
         portfolio_local_ready.scroll_to_section("about")
-        expect(portfolio_local_ready.about.code_content).to_contain_text("Engineer")
+        expect(portfolio_local_ready.about.code_content).to_contain_text("AQAEngineer")
 
-    def test_code_window_contains_dunder_str_method(
+    def test_code_window_shows_quality_approach(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Code content must include the '__str__' method."""
+        """Code profile must describe focus, mindset, and quality approach."""
         portfolio_local_ready.scroll_to_section("about")
-        expect(portfolio_local_ready.about.code_content).to_contain_text("__str__")
+        expect(portfolio_local_ready.about.code_content).to_contain_text("Embedded devices")
+        expect(portfolio_local_ready.about.code_content).to_contain_text("AI-driven analysis")
+        expect(portfolio_local_ready.about.code_content).to_contain_text("Users first")
+        expect(portfolio_local_ready.about.code_content).to_contain_text("Evidence over assumptions")
+        expect(portfolio_local_ready.about.code_content).to_contain_text("Systems people can trust")
 
-    def test_code_window_contains_allergic_to_repetition(
+    def test_code_window_shows_quality_principle(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Return value of self_diagnosis() must contain the 'Allergic to repetition' string."""
+        """Code profile must state that quality is built in."""
         portfolio_local_ready.scroll_to_section("about")
-        expect(portfolio_local_ready.about.code_content).to_contain_text("Allergic to repetition")
-
-    def test_code_window_stack_contains_pytest(
-        self, portfolio_local_ready: PortfolioPage
-    ) -> None:
-        """Tech stack list in the code window must include 'Pytest'."""
-        portfolio_local_ready.scroll_to_section("about")
-        expect(portfolio_local_ready.about.code_content).to_contain_text("Pytest")
-
-    def test_code_window_stack_contains_playwright(
-        self, portfolio_local_ready: PortfolioPage
-    ) -> None:
-        """Tech stack list in the code window must include 'Playwright'."""
-        portfolio_local_ready.scroll_to_section("about")
-        expect(portfolio_local_ready.about.code_content).to_contain_text("Playwright")
+        expect(portfolio_local_ready.about.code_content).to_contain_text(
+            "Quality is built in, not bolted on."
+        )
 
     def test_code_window_has_three_dot_decorators(
         self, portfolio_local_ready: PortfolioPage
@@ -99,15 +91,19 @@ class TestAboutSection:
         portfolio_local_ready.scroll_to_section("about")
         portfolio_local_ready.about.expect_stat_value("Years Experience", "4+")
 
-    def test_stat_label_primary_weapon(self, portfolio_local_ready: PortfolioPage) -> None:
-        """'Primary Weapon' stat item must be visible."""
+    def test_stat_label_embedded_distributed_systems(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Embedded and distributed systems stat item must be visible."""
         portfolio_local_ready.scroll_to_section("about")
-        portfolio_local_ready.about.expect_stat_visible("Primary Weapon")
+        portfolio_local_ready.about.expect_stat_visible("Embedded Systems")
 
-    def test_stat_label_tests_automated(self, portfolio_local_ready: PortfolioPage) -> None:
-        """'Tests Automated' stat item must be visible."""
+    def test_stat_label_product_minded_quality(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Product-minded quality stat item must be visible."""
         portfolio_local_ready.scroll_to_section("about")
-        portfolio_local_ready.about.expect_stat_visible("Tests Automated")
+        portfolio_local_ready.about.expect_stat_visible("Product Mindset")
 
     def test_about_intro_mentions_embedded_and_distributed_systems(
         self, portfolio_local_ready: PortfolioPage

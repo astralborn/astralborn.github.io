@@ -95,12 +95,12 @@
                         <div class="stat-label">Years Experience</div>
                     </div>
                     <div class="stat-item">
-                        <i class="fa-brands fa-python stat-icon"></i>
-                        <div class="stat-label">Primary Weapon</div>
+                        <i class="fa-solid fa-network-wired stat-icon"></i>
+                        <div class="stat-label">Embedded Systems</div>
                     </div>
                     <div class="stat-item">
-                        <i class="fa-solid fa-infinity stat-icon"></i>
-                        <div class="stat-label">Tests Automated</div>
+                        <i class="fa-solid fa-lightbulb stat-icon"></i>
+                        <div class="stat-label">Product Mindset</div>
                     </div>
                 </div>
             </div>
@@ -114,19 +114,15 @@
                         <span class="code-title">about.py</span>
                     </div>
                     <div class="code-content code-content--large">
-<pre><code><span class="code-keyword">@dataclass</span>
-<span class="code-keyword">class</span> <span class="code-variable">Engineer</span>:
-    <span class="code-variable">name</span>: <span class="code-keyword">str</span> = <span class="code-string">"Stanislav N."</span>
-    <span class="code-variable">role</span>: <span class="code-keyword">str</span> = <span class="code-string">"QA Automation Engineer"</span>
-    <span class="code-variable">location</span>: <span class="code-keyword">str</span> = <span class="code-string">"Prague, CZ"</span>
-    <span class="code-variable">experience</span>: <span class="code-keyword">str</span> = <span class="code-string">"4+ years"</span>
-    <span class="code-variable">stack</span>: <span class="code-keyword">list</span> = [<span class="code-string">"Python"</span>, <span class="code-string">"Pytest"</span>, <span class="code-string">"Playwright"</span>, <span class="code-string">"GitLab CI"</span>]
-    <span class="code-variable">domains</span>: <span class="code-keyword">list</span> = [<span class="code-string">"Embedded Systems"</span>, <span class="code-string">"CI/CD"</span>, <span class="code-string">"Web UI"</span>]
-    <span class="code-variable">learning</span>: <span class="code-keyword">list</span> = [<span class="code-string">"Advanced Python & Pytest"</span>, <span class="code-string">"Non-functional testing"</span>, <span class="code-string">"DevOps"</span>]
-    <span class="code-variable">manual_tests</span>: <span class="code-keyword">list</span> = <span class="code-variable">field</span>(<span class="code-property">default_factory</span>=list)    <span class="code-comment"># RIP</span>
+<pre><code><span class="code-keyword">class</span> <span class="code-variable">AQAEngineer</span>:
+    <span class="code-variable">focus</span> = <span class="code-string">"Embedded devices and distributed storage"</span>
+    <span class="code-variable">tools</span> = <span class="code-string">"Automation and AI-driven analysis"</span>
+    <span class="code-variable">mindset</span> = <span class="code-string">"Users first: if it breaks for them, it matters"</span>
+    <span class="code-variable">approach</span> = <span class="code-string">"Evidence over assumptions, from symptom to root cause"</span>
+    <span class="code-variable">goal</span> = <span class="code-string">"Systems people can trust"</span>
 
     <span class="code-keyword">def</span> <span class="code-variable">__str__</span>(<span class="code-property">self</span>):
-        <span class="code-keyword">return</span> <span class="code-string">"Allergic to repetition. Prescribed Python."</span></code></pre>
+        <span class="code-keyword">return</span> <span class="code-string">"Quality is built in, not bolted on."</span></code></pre>
                     </div>
                 </div>
             </div>
@@ -139,7 +135,10 @@
     <div class="projects-grid">
         <div class="project-card project-card--col fade-in">
             <h3>🌉 WSL Port Bridge</h3>
-            <p>WSL isolates its network from the Windows host, blocking UDP packet forwarding by default. Built a utility to automate the bridging — no manual configuration needed.</p>
+            <ul class="project-highlights">
+                <li>Bridges UDP traffic between WSL and Windows</li>
+                <li>Automates setup with no manual configuration</li>
+            </ul>
             <div class="project-card-footer">
                 <div class="blog-tags blog-tags--center">
                     <span class="blog-tag">Python</span>
@@ -152,7 +151,10 @@
 
         <div class="project-card project-card--col project-card--delay-1 fade-in">
             <h3>🔌 API Tester</h3>
-            <p>Desktop API testing tool with a PySide6 UI. Single or batch requests, auto-generated test payloads, built-in logging. Supports HTTP Digest auth and self-signed certs.</p>
+            <ul class="project-highlights">
+                <li>Send single or batch requests with generated payloads</li>
+                <li>Includes logging, Digest auth, and self-signed cert support</li>
+            </ul>
             <div class="project-card-footer">
                 <div class="blog-tags blog-tags--center">
                     <span class="blog-tag">Python</span>
@@ -165,7 +167,10 @@
 
         <div class="project-card project-card--col project-card--delay-2 fade-in">
             <h3>🖥️ This Portfolio</h3>
-            <p>Personal site built as a side project — terminal-inspired UI, scroll animations, zero dependencies. You're looking at it.</p>
+            <ul class="project-highlights">
+                <li>Terminal-inspired design with scroll animations</li>
+                <li>Built with vanilla HTML, CSS, and JavaScript</li>
+            </ul>
             <div class="project-card-footer">
                 <div class="blog-tags blog-tags--center">
                     <span class="blog-tag">JavaScript</span>
