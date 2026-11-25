@@ -287,7 +287,13 @@ h2::after {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
-    max-width: 540px;
+    width: 100%;
+}
+
+.about-stats.about-stats--push {
+    width: 390px;
+    max-width: 100%;
+    align-self: flex-start;
 }
 
 .stat-item {
