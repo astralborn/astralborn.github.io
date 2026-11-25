@@ -77,11 +77,11 @@ class TestContactSection:
         expect(btn).to_have_text("[✓]", timeout=2_000)
         expect(btn).to_have_text("[copy]", timeout=3_000)
 
-    def test_response_time_line_visible(self, portfolio_local_ready: PortfolioPage) -> None:
-        """Terminal must contain a line mentioning 'response time'."""
+    def test_contact_invitation_visible(self, portfolio_local_ready: PortfolioPage) -> None:
+        """Terminal must invite visitors to discuss a role or project."""
         portfolio_local_ready.scroll_to_section("contact")
         terminal = portfolio_local_ready.contact.terminal
-        expect(terminal).to_contain_text("response time")
+        expect(terminal).to_contain_text("Have a role or project in mind? Let’s talk.")
 
     def test_contact_heading_text(self, portfolio_local_ready: PortfolioPage) -> None:
         """The section heading must read exactly 'Get In Touch'."""
@@ -89,9 +89,11 @@ class TestContactSection:
         expect(portfolio_local_ready.contact.heading).to_have_text("Get In Touch")
 
     def test_whoami_output_line_present(self, portfolio_local_ready: PortfolioPage) -> None:
-        """Terminal must include the 'whoami' output stating availability ('open to work')."""
+        """Terminal must mention openness to new opportunities."""
         portfolio_local_ready.scroll_to_section("contact")
-        expect(portfolio_local_ready.contact.terminal).to_contain_text("open to work")
+        expect(portfolio_local_ready.contact.terminal).to_contain_text(
+            "Open to new opportunities"
+        )
 
     def test_email_command_line_present(self, portfolio_local_ready: PortfolioPage) -> None:
         """Terminal must display the 'reach-out --method=email' command line."""
@@ -128,10 +130,12 @@ class TestContactSection:
         dots = portfolio_local_ready.contact.terminal.locator(".terminal-dot")
         expect(dots).to_have_count(3)
 
-    def test_all_channels_open_line_present(self, portfolio_local_ready: PortfolioPage) -> None:
-        """Terminal footer line must confirm 'all channels open'."""
+    def test_contact_footer_invites_conversation(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Terminal footer must invite a conversation about a role or project."""
         portfolio_local_ready.scroll_to_section("contact")
-        expect(portfolio_local_ready.contact.terminal).to_contain_text("all channels open")
+        expect(portfolio_local_ready.contact.terminal).to_contain_text("Let’s talk.")
 
     def test_contact_section_is_visible(self, portfolio_local_ready: PortfolioPage) -> None:
         """The #contact section element must be visible after scrolling into view."""
@@ -190,4 +194,3 @@ class TestContactSection:
         popup = popup_info.value
         assert "linkedin.com" in popup.url.lower()
         popup.close()
-
