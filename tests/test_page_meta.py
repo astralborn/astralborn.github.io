@@ -22,12 +22,13 @@ class TestPageMeta:
         desc = portfolio_local_ready.get_meta_description()
         assert "Prague" in desc
 
-    def test_meta_description_mentions_playwright(
+    def test_meta_description_mentions_current_focus(
         self, portfolio_local_ready: PortfolioPage
     ) -> None:
-        """Meta description must include 'Playwright' as part of the tech stack."""
+        """Meta description must reflect the current embedded/distributed focus."""
         desc = portfolio_local_ready.get_meta_description()
-        assert "Playwright" in desc
+        assert "embedded devices" in desc
+        assert "distributed systems" in desc
 
     def test_meta_author_is_astralborn(self, portfolio_local_ready: PortfolioPage) -> None:
         """meta[name='author'] must be set to 'astralborn'."""
@@ -193,6 +194,14 @@ class Test404Page:
         lang = page.locator("html").get_attribute("lang") or ""
         assert lang == "en"
 
+    def test_404_favicon_path_exists(self, page: Page) -> None:
+        """The 404 page favicon link must point to the existing SVG asset."""
+        self._goto_404(page)
+        href = page.locator("link[rel='icon']").get_attribute("href") or ""
+        assert href == "/src/assets/images/favicon.svg"
+        favicon = pathlib.Path(__file__).parent.parent / href.lstrip("/")
+        assert favicon.is_file(), f"Favicon file does not exist: {favicon}"
+
     # ── interactions ─────────────────────────────────────────────────────────
 
     def test_404_home_link_href_points_to_root(self, page: Page) -> None:
@@ -237,4 +246,3 @@ class Test404Page:
         bad_path_text = page.locator("#badpath").inner_text()
         # When opened as a file:// URI the pathname will not be empty
         assert bad_path_text.strip() != "", "#badpath should be populated by the inline script"
-

@@ -14,6 +14,10 @@ class TestNavBar:
         """Logo text must include 'astralborn' (case-insensitive)."""
         portfolio_local_ready.nav.expect_logo_contains("astralborn")
 
+    def test_logo_links_to_home(self, portfolio_local_ready: PortfolioPage) -> None:
+        """The site logo must link to the home section."""
+        expect(portfolio_local_ready.nav.logo).to_have_attribute("href", "#home")
+
     def test_all_nav_links_present(self, portfolio_local_ready: PortfolioPage) -> None:
         """All 4 section links (Home, About, Projects, Contact) must be visible."""
         portfolio_local_ready.nav.expect_all_nav_links_visible()
@@ -32,8 +36,32 @@ class TestNavBar:
         assert href.endswith(".pdf"), f"Expected a PDF link, got: {href}"
 
     def test_hamburger_button_exists(self, portfolio_local_ready: PortfolioPage) -> None:
-        """Hamburger toggle element (.hamburger) must be present in the DOM."""
+        """Hamburger toggle must be an accessible button controlling the menu."""
         expect(portfolio_local_ready.nav.hamburger).to_be_attached()
+        expect(portfolio_local_ready.nav.hamburger).to_have_attribute(
+            "aria-controls", "navLinks"
+        )
+        expect(portfolio_local_ready.nav.hamburger).to_have_attribute(
+            "aria-expanded", "false"
+        )
+
+    def test_mobile_hamburger_opens_vertical_menu(
+        self, portfolio_local_ready: PortfolioPage
+    ) -> None:
+        """Mobile hamburger opens the visible vertical nav and updates its expanded state."""
+        page = portfolio_local_ready._page
+        page.set_viewport_size({"width": 390, "height": 844})
+        hamburger = portfolio_local_ready.nav.hamburger
+        menu = portfolio_local_ready.nav.nav_links_container
+
+        expect(hamburger).to_be_visible()
+        expect(menu).to_have_css("display", "flex")
+        hamburger.click()
+        expect(hamburger).to_have_attribute("aria-expanded", "true")
+        expect(menu).to_have_class(re.compile(r"active"))
+        menu.locator('a[href="#about"]').click()
+        expect(hamburger).to_have_attribute("aria-expanded", "false")
+        expect(menu).not_to_have_class(re.compile(r"active"))
 
     @pytest.mark.parametrize("label", ["Home", "About", "Projects", "Contact"])
     def test_nav_link_has_correct_anchor(

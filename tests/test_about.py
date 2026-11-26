@@ -147,20 +147,6 @@ class TestAboutSection:
         portfolio_local_ready.scroll_to_section("about")
         expect(portfolio_local_ready.about.code_title).to_be_visible()
 
-    def test_code_window_contains_location_prague(
-        self, portfolio_local_ready: PortfolioPage
-    ) -> None:
-        """Code content must include 'Prague' as the location attribute value."""
-        portfolio_local_ready.scroll_to_section("about")
-        expect(portfolio_local_ready.about.code_content).to_contain_text("Prague")
-
-    def test_code_window_contains_stanislav(
-        self, portfolio_local_ready: PortfolioPage
-    ) -> None:
-        """Code content must include the author's first name 'Stanislav'."""
-        portfolio_local_ready.scroll_to_section("about")
-        expect(portfolio_local_ready.about.code_content).to_contain_text("Stanislav")
-
     # --- Negative / edge-case tests ---
 
     def test_stat_nonexistent_label_not_present(

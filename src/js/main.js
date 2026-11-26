@@ -86,13 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hamburger) {
         hamburger.addEventListener('click', () => {
-            navLinksEl.classList.toggle('active');
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', String(!isExpanded));
+            navLinksEl.classList.toggle('active', !isExpanded);
         });
     }
 
     navLinksEl.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', () => {
             navLinksEl.classList.remove('active');
+            if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
         });
     });
 });
