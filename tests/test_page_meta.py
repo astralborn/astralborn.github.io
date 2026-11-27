@@ -234,10 +234,13 @@ class Test404Page:
         self._goto_404(page)
         link = page.locator("a.home-link")
         link.hover()
+        page.wait_for_function(
+            "() => getComputedStyle(document.querySelector('a.home-link')).backgroundColor "
+            "=== 'rgb(0, 255, 140)'"
+        )
         bg_color = link.evaluate("el => getComputedStyle(el).backgroundColor")
-        # The hover rule sets background: #00FF8C — must be non-transparent
-        assert bg_color != "rgba(0, 0, 0, 0)", (
-            f"Expected a coloured background on hover, got '{bg_color}'"
+        assert bg_color == "rgb(0, 255, 140)", (
+            f"Expected the green hover background, got '{bg_color}'"
         )
 
     def test_404_bad_path_script_runs(self, page: Page) -> None:
